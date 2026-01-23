@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift Up My Eyes: Psalm 121 | RS Buckner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #16161a;
+            --bg-card-hover: #1c1c21;
+            --text-primary: #efefe5;
+            --text-secondary: #8a8a8a;
+            --text-muted: #5a5a5a;
+            --accent-teal: #a855f7;
+            --accent-purple: #6a59e5;
+            --accent-orange: #fb7c4f;
+            --accent-pink: #e559e5;
+            --border-color: #2a2a2e;
+            --gradient-1: linear-gradient(135deg, #6a59e5, #e559e5);
+            --gradient-2: linear-gradient(135deg, #6a59e5, #e559e5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            padding: 0.625rem 1.25rem;
+            background: var(--gradient-1);
+            color: var(--bg-primary) !important;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 11, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--accent-teal);
+        }
+
+        .mobile-nav .nav-cta {
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-1);
+            color: var(--bg-primary) !important;
+            border-radius: 12px;
+            font-size: 1.125rem;
+        }
+
+        /* Hero Image */
+        .post-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            margin-top: 72px;
+            overflow: hidden;
+        }
+
+        .post-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-primary) 0%, transparent 50%);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: -120px auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-category {
+            padding: 0.375rem 0.875rem;
+            background: rgba(106, 89, 229, 0.15);
+            color: var(--accent-purple);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .post-category.sermons {
+            background: rgba(167, 85, 247, 0.15);
+            color: var(--accent-teal);
+        }
+
+        .article-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .article-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-excerpt {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+
+        .article-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-content em {
+            color: var(--accent-teal);
+            font-style: italic;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Scripture Block */
+        .scripture-block {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-teal);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .scripture-block p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .scripture-block p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .scripture-block cite {
+            display: block;
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-style: normal;
+        }
+
+        /* Sermon Points */
+        .sermon-point {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .point-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .point-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+        }
+
+        .point-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .point-content {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+        }
+
+        .point-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .point-content h3:first-child {
+            margin-top: 0.5rem;
+        }
+
+        .point-content ul {
+            margin: 1rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .point-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Application Section */
+        .application-section {
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(106, 89, 229, 0.1) 0%, rgba(229, 89, 229, 0.1) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(106, 89, 229, 0.2);
+        }
+
+        .application-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .application-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .application-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        .application-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient-1);
+            z-index: 99;
+            transition: width 0.1s;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-teal);
+            color: var(--bg-primary);
+            border-color: var(--accent-teal);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav { display: none; }
+            .menu-toggle { display: flex; }
+            .mobile-nav { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { padding: 0.875rem 1rem; }
+            .post-hero { height: 45vh; min-height: 280px; margin-top: 60px; }
+            .article-container { margin-top: -80px; padding: 0 1rem; }
+            .article-header { margin-bottom: 2rem; }
+            .article-title { font-size: 1.75rem; margin-bottom: 1rem; }
+            .article-excerpt { font-size: 1.0625rem; margin-bottom: 1.5rem; }
+            .article-author { flex-direction: column; text-align: center; padding: 1.25rem; }
+            .article-content { font-size: 1.0625rem; }
+            .article-content h2 { font-size: 1.5rem; }
+            .scripture-block { padding: 1.5rem; }
+            .sermon-point { padding: 1.5rem; }
+            .footer-content { flex-direction: column; gap: 1.25rem; }
+        }
+
+        @media (max-width: 480px) {
+            .article-container { padding: 0 0.875rem; }
+            .article-title { font-size: 1.5rem; }
+            .scripture-block { padding: 1.25rem; }
+            .sermon-point { padding: 1.25rem; }
+            .application-section { padding: 1.5rem; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon"><img src="../images/IMG_1350.PNG" alt="RS Buckner"></div>
+                <span class="logo-text">RS Buckner</span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
+    </nav>
+
+    <!-- Hero Image -->
+    <div class="post-hero">
+        <img src="../images/movie_minister_a_young_African_boy_with_short_hair_and_blue_eye_74927c1b-8fd6-4f95-a808-bd9e681e9919.png" alt="Lift Up My Eyes">
+        <div class="post-hero-overlay"></div>
+    </div>
+
+    <article class="article-container">
+        <!-- Article Header -->
+        <header class="article-header fade-in">
+            <div class="article-meta">
+                <span class="post-category sermons">Sermons</span>
+                <span class="article-date">January 2025</span>
+            </div>
+            <h1 class="article-title">Lift Up My Eyes: Psalm 121</h1>
+            <p class="article-excerpt">Evaluating our hearts as we lift up our eyes to see God working—not ourselves, our strategies, or our plans.</p>
+            <div class="article-author">
+                <div class="author-avatar">RS</div>
+                <div class="author-info">
+                    <div class="author-name">RS Buckner</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-content fade-in fade-in-delay-1">
+
+            <div class="scripture-block">
+                <p>"I lift up my eyes to the mountains—where does my help come from? My help comes from the LORD, the Maker of heaven and earth."</p>
+                <cite>— Psalm 121:1-2 (NIV)</cite>
+            </div>
+
+            <p>This passage begins with a question but quickly answers it from verse 2 onward. It is believed to be a priestly blessing for worshipers who traveled long distances to the temple for major festivals and were now returning home.</p>
+
+            <p>The blessing reminds and encourages travelers physically leaving God's presence at the temple—God remains present to protect them on the challenging journey back into the world. <strong>To "lift up the eyes" is to look past the dangers and up to the God who helps and protects.</strong></p>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">1</div>
+                    <h3 class="point-title">Lifting Up Our Eyes Requires Trusting God with the Whole Heart</h3>
+                </div>
+                <div class="point-content">
+                    <h3>What Trust Involves</h3>
+                    <ul>
+                        <li>Trusting Him with fears, passions, and desires</li>
+                        <li>Trusting Him with connection to Him</li>
+                        <li>Not trusting in surrounding circumstances</li>
+                    </ul>
+                    <h3>Key Insight</h3>
+                    <p>The longer a person walks with God, His covenant demands more—not necessarily more activity, but <strong>more of the heart</strong>.</p>
+                    <p>Trust must rest in the God who created horses and chariots, not in the horses and chariots themselves. There is a danger in attending retreats or conferences and placing faith in strategies or creative plans rather than in God.</p>
+                </div>
+            </div>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">2</div>
+                    <h3 class="point-title">Understanding Heart vs. Action</h3>
+                </div>
+                <div class="point-content">
+                    <h3>The Danger of Imitating Actions Without Heart</h3>
+                    <p>It is possible to leave a leadership retreat ready to imitate actions but miss the heart behind them. <strong>The heart for God is what matters most;</strong> imitating action alone produces little lasting fruit.</p>
+                    <h3>Biblical Examples of Heart Failure</h3>
+                    <ul>
+                        <li>Ananias and Sapphira (Acts 5)</li>
+                        <li>Simon the Sorcerer (Acts 8)</li>
+                        <li>"Lord, Lord" profession without obedience (Matthew 7)</li>
+                        <li>The Rich Young Ruler (Luke 18)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>A Comical Illustration: The Seven Sons of Sceva</h3>
+
+            <div class="scripture-block">
+                <p>"Some Jews who went around driving out evil spirits tried to invoke the name of the Lord Jesus over those who were demon-possessed. They would say, 'In the name of the Jesus whom Paul preaches, I command you to come out.' Seven sons of Sceva, a Jewish chief priest, were doing this. One day the evil spirit answered them, 'Jesus I know, and Paul I know about, but who are you?' Then the man who had the evil spirit jumped on them and overpowered them all. He gave them such a beating that they ran out of the house naked and bleeding. When this became known to the Jews and Greeks living in Ephesus, they were all seized with fear, and the name of the Lord Jesus was held in high honor."</p>
+                <cite>— Acts 19:13-17 (NIV)</cite>
+            </div>
+
+            <p>Trying to implement someone else's ideas without the right heart often leads to getting beat up.</p>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">3</div>
+                    <h3 class="point-title">God Emphasizes the Heart Through Unconventional Plans</h3>
+                </div>
+                <div class="point-content">
+                    <p>Throughout Scripture, God brings about blessing in ways that make sense only because He is behind them and the people's hearts are devoted to following Him.</p>
+                    <h3>Biblical Examples of Heart-Driven Plans</h3>
+                    <ul>
+                        <li><strong>Abraham</strong> — sacrificing his son despite being promised he would father many nations</li>
+                        <li><strong>Moses</strong> — challenging Pharaoh with a staff and his brother, then walking through the Red Sea with slaves</li>
+                        <li><strong>Moses</strong> — holding up his hands to defeat the Amalekites (Exodus 17)</li>
+                        <li><strong>Moses</strong> — making a bronze serpent to heal the Israelites</li>
+                        <li><strong>Joshua</strong> — singing worship songs while marching around Jericho as military strategy (Joshua 6)</li>
+                        <li><strong>Gideon</strong> — reducing 32,000 men to 300 to defeat an innumerable Midianite army (Judges 7)</li>
+                        <li><strong>Jonathan and his armor-bearer</strong> — attacking a Philistine outpost, just the two of them, climbing a cliff on hands and knees (1 Samuel 14:1-15)</li>
+                        <li><strong>David and Goliath</strong></li>
+                        <li><strong>Naaman</strong> — a powerful foreign commander told to wash in an insignificant river (2 Kings 5)</li>
+                        <li><strong>Ezekiel</strong> — lying on his side for over 400 days (Ezekiel 4)</li>
+                        <li><strong>Hosea</strong> — marrying a prostitute</li>
+                        <li><strong>Jesus</strong> — spitting in mud to heal blindness (John 9)</li>
+                        <li><strong>The entire passion narrative</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scripture-block">
+                <p>"You have too many men. I cannot deliver Midian into their hands, or Israel would boast against me, 'My own strength has saved me.'"</p>
+                <cite>— Judges 7:2 (NIV)</cite>
+            </div>
+
+            <div class="scripture-block">
+                <p>"Nothing can hinder the LORD from saving, whether by many or by few."</p>
+                <cite>— 1 Samuel 14:6 (NIV)</cite>
+            </div>
+
+            <p>If anyone suggested these as ministry ideas today, they would be fired—and no one would put faith in them. <strong>It is never about the action; it is about the heart.</strong></p>
+
+            <h3>Proof Text: God Looks at the Heart</h3>
+
+            <div class="scripture-block">
+                <p>"But the LORD said to Samuel, 'Do not consider his appearance or his height, for I have rejected him. The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.'"</p>
+                <cite>— 1 Samuel 16:7 (NIV)</cite>
+            </div>
+
+            <div class="scripture-block">
+                <p>"I have found David son of Jesse, a man after my own heart; he will do everything I want him to do."</p>
+                <cite>— Acts 13:22 (NIV)</cite>
+            </div>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">4</div>
+                    <h3 class="point-title">Investing the Best Parts of Ourselves</h3>
+                </div>
+                <div class="point-content">
+                    <h3>Key Principles</h3>
+                    <ul>
+                        <li>God wants, desires, and demands the best of the heart</li>
+                        <li>"Just giving what I can" is not good enough—God does not want scraps</li>
+                        <li>The quality of giving and sacrifice is what God desires</li>
+                        <li>Abraham's willingness to give up his one desire—his son—was not about God wanting Isaac but about <strong>God wanting Abraham's heart</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scripture-block">
+                <p>"Now Abel kept flocks, and Cain worked the soil. In the course of time Cain brought some of the fruits of the soil as an offering to the LORD. And Abel also brought an offering—fat portions from some of the firstborn of his flock. The LORD looked with favor on Abel and his offering, but on Cain and his offering he did not look with favor. So Cain was very angry, and his face was downcast. Then the LORD said to Cain, 'Why are you angry? Why is your face downcast? If you do what is right, will you not be accepted? But if you do not do what is right, sin is crouching at your door; it desires to have you, but you must rule over it.'"</p>
+                <cite>— Genesis 4:2b-7 (NIV)</cite>
+            </div>
+
+            <h3>What "The Best Parts" Looks Like</h3>
+            <ul>
+                <li><em>Focus</em> — Locked in</li>
+                <li><em>Time</em> — Making space for Him</li>
+                <li><em>Attention</em> — Listening for Him</li>
+                <li><em>Passion</em> — Emotionally expressive for God's people, not just reserved for sports teams or hobbies</li>
+            </ul>
+
+            <p>Consider how emotionally invested people become over a national championship game. Would a spouse accept that same energy being withheld from the relationship? <strong>God deserves emotional expressiveness directed toward Him and His people.</strong></p>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">5</div>
+                    <h3 class="point-title">Relentless Connection</h3>
+                </div>
+                <div class="point-content">
+                    <h3>A Challenge from Professional Athletes</h3>
+                    <p>People expect more from a professional athlete in their craft than they often expect from themselves with God. No one expects a top athlete just to maintain—everyone expects growth, reinvention, and relentless pursuit of excellence.</p>
+                    <p>The same standard should apply to the relationship with God:</p>
+                    <ul>
+                        <li>Growing deeper year by year</li>
+                        <li>Striving to understand Him more—not just in knowledge, but in <strong>connection</strong></li>
+                        <li>Being obsessed with God</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Paul's Example</h3>
+
+            <div class="scripture-block">
+                <p>"At one time all these things were important to me. But because of Christ, I decided that they are worth nothing. Not only these things, but now I think that all things are worth nothing compared with the greatness of knowing Christ Jesus my Lord. Because of Christ, I lost all these things, and now I know that they are all worthless trash. All I want now is Christ. I want to belong to him. In Christ I am right with God, but my being right does not come from following the law. It comes from God through faith. God uses my faith in Christ to make me right with him. All I want is to know Christ and the power that raised him from death. I want to share in his sufferings and be like him even in his death. Then there is hope that I myself will somehow be raised from death."</p>
+                <cite>— Philippians 3:7-11 (ERV)</cite>
+            </div>
+
+            <p>Paul has simply lost himself in Jesus. All that matters is his connection to Christ. <strong>This is the relentless connection worth striving for.</strong></p>
+
+            <h2>Conclusion</h2>
+
+            <p>Working on the heart for God allows for truly seeing Him at work—not ministry successes or failures, not the next best strategy or plan, not the pressure of being the sole reason a ministry rises or falls.</p>
+
+            <p><strong>Lift up your eyes—fully trusting God with your heart—to see Him working and navigating you through the dangerous journey back home.</strong></p>
+
+            <div class="scripture-block">
+                <p>"I lift up my eyes to the mountains—where does my help come from? My help comes from the LORD, the Maker of heaven and earth. He will not let your foot slip—he who watches over you will not slumber; indeed, he who watches over Israel will neither slumber nor sleep. The LORD watches over you—the LORD is your shade at your right hand; the sun will not harm you by day, nor the moon by night. The LORD will keep you from all harm—he will watch over your life; the LORD will watch over your coming and going both now and forevermore."</p>
+                <cite>— Psalm 121:1-8 (NIV)</cite>
+            </div>
+
+            <div class="application-section">
+                <h3 class="application-title">Questions to Consider</h3>
+                <ul class="application-list">
+                    <li>Are you trusting in strategies and plans, or the God behind them?</li>
+                    <li>Is God getting the best parts of you—your focus, time, attention, and passion?</li>
+                    <li>Are you growing deeper in your connection with God year by year?</li>
+                    <li>What would it look like to be "obsessed" with God the way Paul was?</li>
+                </ul>
+            </div>
+
+            <p><strong>Lift up your eyes—your help comes from the LORD, the Maker of heaven and earth.</strong></p>
+
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="mailto:richard.buckner@gpcc.org">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2025 RS Buckner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Reading progress bar
+        const progressBar = document.getElementById('progressBar');
+        const article = document.querySelector('.article-content');
+
+        window.addEventListener('scroll', () => {
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            const progress = Math.min(
+                Math.max((scrollY - articleTop + windowHeight * 0.5) / articleHeight * 100, 0),
+                100
+            );
+
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

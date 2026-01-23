@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking by Faith: Lessons from Hebrews 11 | RS Buckner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #16161a;
+            --bg-card-hover: #1c1c21;
+            --text-primary: #efefe5;
+            --text-secondary: #8a8a8a;
+            --text-muted: #5a5a5a;
+            --accent-teal: #a855f7;
+            --accent-purple: #6a59e5;
+            --accent-orange: #fb7c4f;
+            --accent-pink: #e559e5;
+            --border-color: #2a2a2e;
+            --gradient-1: linear-gradient(135deg, #6a59e5, #e559e5);
+            --gradient-2: linear-gradient(135deg, #6a59e5, #e559e5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            padding: 0.625rem 1.25rem;
+            background: var(--gradient-1);
+            color: var(--bg-primary) !important;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Hero Image */
+        .post-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            margin-top: 72px;
+            overflow: hidden;
+        }
+
+        .post-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-primary) 0%, transparent 50%);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: -120px auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-category {
+            padding: 0.375rem 0.875rem;
+            background: rgba(106, 89, 229, 0.15);
+            color: var(--accent-purple);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .post-category.sermons {
+            background: rgba(40, 239, 206, 0.15);
+            color: var(--accent-teal);
+        }
+
+        .post-category.movie-ministry {
+            background: rgba(251, 124, 79, 0.15);
+            color: var(--accent-orange);
+        }
+
+        .post-category.small-groups {
+            background: rgba(229, 89, 229, 0.15);
+            color: var(--accent-pink);
+        }
+
+        .article-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .article-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-excerpt {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-bio {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+
+        .article-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-content em {
+            color: var(--accent-teal);
+            font-style: italic;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content a {
+            color: var(--accent-teal);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Scripture Block */
+        .scripture-block {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-teal);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .scripture-block p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .scripture-block cite {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-style: normal;
+        }
+
+        /* Sermon Points */
+        .sermon-point {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .point-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .point-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+        }
+
+        .point-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .point-content {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+        }
+
+        /* Image with Caption */
+        .article-image {
+            margin: 2.5rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-image figcaption {
+            padding: 1rem;
+            background: var(--bg-card);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        /* Application Section */
+        .application-section {
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(40, 239, 206, 0.1) 0%, rgba(106, 89, 229, 0.1) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(40, 239, 206, 0.2);
+        }
+
+        .application-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .application-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .application-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .application-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .application-list .check {
+            color: var(--accent-teal);
+            font-size: 1.25rem;
+        }
+
+        /* Share Section */
+        .share-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .share-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .share-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--accent-teal);
+            color: var(--bg-primary);
+            border-color: var(--accent-teal);
+        }
+
+        /* Related Posts */
+        .related-section {
+            margin: 4rem 0;
+        }
+
+        .related-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+        }
+
+        .related-card-image {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .related-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .related-card:hover .related-card-image img {
+            transform: scale(1.05);
+        }
+
+        .related-card-content {
+            padding: 1.25rem;
+        }
+
+        .related-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient-1);
+            z-index: 99;
+            transition: width 0.1s;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-teal);
+            color: var(--bg-primary);
+            border-color: var(--accent-teal);
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Navigation Overlay */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 11, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--accent-teal);
+        }
+
+        .mobile-nav .nav-cta {
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-1);
+            color: var(--bg-primary) !important;
+            border-radius: 12px;
+            font-size: 1.125rem;
+        }
+
+        /* Responsive - Tablets */
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .mobile-nav {
+                display: flex;
+            }
+        }
+
+        /* Responsive - Tablets & Small Devices */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0.875rem 1rem;
+            }
+
+            .post-hero {
+                height: 45vh;
+                min-height: 280px;
+                margin-top: 60px;
+            }
+
+            .article-container {
+                margin-top: -80px;
+                padding: 0 1rem;
+            }
+
+            .article-header {
+                margin-bottom: 2rem;
+            }
+
+            .article-meta {
+                gap: 0.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .article-title {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .article-excerpt {
+                font-size: 1.0625rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .article-author {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.25rem;
+            }
+
+            .author-avatar {
+                width: 48px;
+                height: 48px;
+            }
+
+            .article-content {
+                font-size: 1.0625rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.5rem;
+                margin: 2.5rem 0 1.25rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.25rem;
+                margin: 2rem 0 0.875rem;
+            }
+
+            .scripture-block {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .scripture-block p {
+                font-size: 1.125rem;
+            }
+
+            .sermon-point {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .point-header {
+                gap: 0.875rem;
+            }
+
+            .point-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.125rem;
+            }
+
+            .point-title {
+                font-size: 1.25rem;
+            }
+
+            .point-content {
+                font-size: 1rem;
+            }
+
+            .application-section {
+                padding: 1.75rem;
+                margin: 2rem 0;
+            }
+
+            .application-title {
+                font-size: 1.25rem;
+            }
+
+            .share-section {
+                padding: 1.5rem;
+                margin: 2.5rem 0;
+            }
+
+            .share-title {
+                font-size: 1.125rem;
+            }
+
+            .related-section {
+                margin: 2.5rem 0;
+            }
+
+            .related-title {
+                font-size: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            footer {
+                margin-top: 3rem;
+                padding: 2rem 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.25rem;
+            }
+
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        /* Responsive - Large Smartphones */
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1.125rem;
+                border-radius: 8px;
+            }
+
+            .logo-text {
+                font-size: 1.125rem;
+            }
+
+            .post-hero {
+                height: 40vh;
+                min-height: 240px;
+                margin-top: 56px;
+            }
+
+            .article-container {
+                margin-top: -60px;
+                padding: 0 0.875rem;
+            }
+
+            .post-category {
+                padding: 0.3rem 0.625rem;
+                font-size: 0.6875rem;
+            }
+
+            .article-date {
+                font-size: 0.8125rem;
+            }
+
+            .article-title {
+                font-size: 1.5rem;
+                line-height: 1.25;
+            }
+
+            .article-excerpt {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .article-author {
+                padding: 1rem;
+            }
+
+            .author-avatar {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+
+            .author-name {
+                font-size: 1rem;
+            }
+
+            .author-bio {
+                font-size: 0.8125rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .article-content h2 {
+                font-size: 1.375rem;
+                margin: 2rem 0 1rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.125rem;
+            }
+
+            .article-content ul,
+            .article-content ol {
+                padding-left: 1.25rem;
+            }
+
+            .scripture-block {
+                padding: 1.25rem;
+                margin: 1.75rem 0;
+                border-radius: 0 10px 10px 0;
+            }
+
+            .scripture-block p {
+                font-size: 1.0625rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .scripture-block cite {
+                font-size: 0.8125rem;
+            }
+
+            .sermon-point {
+                padding: 1.25rem;
+                margin: 1.75rem 0;
+                border-radius: 12px;
+            }
+
+            .point-number {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+                border-radius: 10px;
+            }
+
+            .point-title {
+                font-size: 1.125rem;
+            }
+
+            .point-content {
+                font-size: 0.9375rem;
+            }
+
+            .article-image {
+                margin: 1.75rem -0.875rem;
+                border-radius: 0;
+            }
+
+            .article-image figcaption {
+                padding: 0.75rem;
+                font-size: 0.8125rem;
+            }
+
+            .application-section {
+                padding: 1.25rem;
+                margin: 1.75rem 0;
+                border-radius: 12px;
+            }
+
+            .application-title {
+                font-size: 1.125rem;
+                margin-bottom: 1rem;
+            }
+
+            .application-list li {
+                padding: 0.875rem 0;
+                font-size: 0.9375rem;
+            }
+
+            .application-list .check {
+                font-size: 1rem;
+            }
+
+            .share-section {
+                padding: 1.25rem;
+                margin: 2rem 0;
+                border-radius: 12px;
+            }
+
+            .share-title {
+                font-size: 1rem;
+                margin-bottom: 0.875rem;
+            }
+
+            .share-btn {
+                width: 44px;
+                height: 44px;
+                border-radius: 10px;
+            }
+
+            .related-section {
+                margin: 2rem 0;
+            }
+
+            .related-title {
+                font-size: 1.125rem;
+            }
+
+            .related-card {
+                border-radius: 10px;
+            }
+
+            .related-card-content {
+                padding: 1rem;
+            }
+
+            .related-card-title {
+                font-size: 0.9375rem;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem 1.5rem;
+            }
+
+            .footer-links a,
+            .footer-copy {
+                font-size: 0.8125rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+            }
+        }
+
+        /* Responsive - Standard Smartphones */
+        @media (max-width: 390px) {
+            .article-container {
+                padding: 0 0.75rem;
+            }
+
+            .article-title {
+                font-size: 1.375rem;
+            }
+
+            .article-excerpt {
+                font-size: 0.9375rem;
+            }
+
+            .article-content {
+                font-size: 0.9375rem;
+            }
+
+            .scripture-block p {
+                font-size: 1rem;
+            }
+
+            .sermon-point,
+            .application-section,
+            .share-section {
+                padding: 1rem;
+            }
+        }
+
+        /* Responsive - Small Smartphones */
+        @media (max-width: 320px) {
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .article-title {
+                font-size: 1.25rem;
+            }
+
+            .article-excerpt {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .share-btn:active {
+                transform: scale(0.95);
+            }
+
+            .related-card:active {
+                transform: scale(0.98);
+            }
+
+            .back-to-top:active {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Landscape mode for phones */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .post-hero {
+                height: 60vh;
+                min-height: 200px;
+            }
+
+            .article-container {
+                margin-top: -40px;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">+</div>
+                <span class="logo-text">RS Buckner</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#">About</a>
+                <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
+    </nav>
+
+    <!-- Hero Image -->
+    <div class="post-hero">
+        <img src="images/walking-by-faith.png" alt="Walking by Faith">
+        <div class="post-hero-overlay"></div>
+    </div>
+
+    <article class="article-container">
+        <!-- Article Header -->
+        <header class="article-header fade-in">
+            <div class="article-meta">
+                <span class="post-category sermons">Sermons</span>
+                <span class="article-date">January 19, 2025</span>
+            </div>
+            <h1 class="article-title">Walking by Faith: Lessons from Hebrews 11</h1>
+            <p class="article-excerpt">Discover what it truly means to live by faith as we explore the heroes of Hebrews 11 and learn how their trust in God can transform our daily walk.</p>
+            <div class="article-author">
+                <div class="author-avatar">RS</div>
+                <div class="author-info">
+                    <div class="author-name">RS Buckner</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-content fade-in fade-in-delay-1">
+            <p>There's a chapter in the Bible that reads like a hall of fame—not of athletes or entertainers, but of ordinary people who did extraordinary things because they believed God. <strong>Hebrews 11</strong> is often called "The Faith Chapter," and for good reason. It gives us a front-row seat to the kind of faith that moves mountains, parts seas, and transforms lives.</p>
+
+            <p>But here's what strikes me most about this chapter: none of these heroes had it all figured out. They didn't have perfect circumstances. Many of them didn't even see the promises fulfilled in their lifetime. Yet they believed anyway.</p>
+
+            <div class="scripture-block">
+                <p>"Now faith is the substance of things hoped for, the evidence of things not seen."</p>
+                <cite>— Hebrews 11:1 (KJV)</cite>
+            </div>
+
+            <h2>Understanding True Faith</h2>
+
+            <p>Before we dive into the stories, we need to understand what faith actually is. The world often confuses faith with wishful thinking or blind optimism. But biblical faith is something entirely different.</p>
+
+            <p>The Greek word for "substance" here is <em>hypostasis</em>—it literally means the foundation or support structure beneath something. Faith isn't a feeling; it's the bedrock upon which we build our lives. When Abraham left Ur, he didn't have Google Maps or a five-year plan. He had a promise from God, and that promise became more real to him than the city walls he left behind.</p>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">1</div>
+                    <h3 class="point-title">Faith Has Substance</h3>
+                </div>
+                <div class="point-content">
+                    <p>Faith isn't wishful thinking or positive vibes. It's the confident assurance that what God has promised, He will deliver. When you have faith, you're not hoping something might be true—you're standing on the certainty that it is true, even when you can't see it yet.</p>
+                </div>
+            </div>
+
+            <h2>The Evidence of the Unseen</h2>
+
+            <p>The second part of our key verse says faith is "the evidence of things not seen." Think about that word: <strong>evidence</strong>. In a courtroom, evidence is what convinces the jury. It's proof that holds up under cross-examination.</p>
+
+            <p>Moses is a perfect example. Hebrews 11:27 tells us he "endured as seeing him who is invisible." Moses saw Pharaoh's army, the Red Sea, the grumbling Israelites—all very visible problems. But he also saw something else: the invisible God who had called him. And that invisible reality was more convincing to him than what his eyes could see.</p>
+
+            <figure class="article-image">
+                <img src="images/finding-hope.png" alt="Faith sees beyond">
+                <figcaption>Faith sees beyond the visible obstacles to the invisible God who moves mountains.</figcaption>
+            </figure>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">2</div>
+                    <h3 class="point-title">Faith Provides Evidence</h3>
+                </div>
+                <div class="point-content">
+                    <p>Your faith becomes the proof of what you believe. When you step out in obedience before you see the outcome, when you give before you see provision, when you praise before you see victory—your actions become evidence that you truly believe God is who He says He is.</p>
+                </div>
+            </div>
+
+            <h2>Seeing the Invisible</h2>
+
+            <p>Every hero in Hebrews 11 had one thing in common: <em>they saw something others couldn't</em>. Noah saw rain before anyone knew what rain was. Abraham saw a nation when he had no children. Moses saw freedom when all Israel saw was slavery.</p>
+
+            <p>This is perhaps the most challenging aspect of faith. It requires us to value God's perspective more than our own. It asks us to trust His timeline when ours feels more urgent. It demands that we believe His promises when our circumstances scream something different.</p>
+
+            <div class="scripture-block">
+                <p>"For we walk by faith, not by sight."</p>
+                <cite>— 2 Corinthians 5:7 (ESV)</cite>
+            </div>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">3</div>
+                    <h3 class="point-title">Faith Sees Beyond the Visible</h3>
+                </div>
+                <div class="point-content">
+                    <p>Faith doesn't ignore reality—it sees a deeper reality. It recognizes that what God says is more certain than what our circumstances suggest. The challenge isn't to deny what we see, but to give greater weight to what God has spoken.</p>
+                </div>
+            </div>
+
+            <h2>What Faith Looks Like Today</h2>
+
+            <p>So what does this mean for us, living in the 21st century? We may not be parting seas or defeating giants, but we face our own battles that require the same kind of faith.</p>
+
+            <ul>
+                <li><strong>The diagnosis</strong> that threatens to steal your peace</li>
+                <li><strong>The job loss</strong> that shakes your security</li>
+                <li><strong>The relationship</strong> that seems beyond repair</li>
+                <li><strong>The dream</strong> that feels impossible</li>
+                <li><strong>The calling</strong> that terrifies you</li>
+            </ul>
+
+            <p>In each of these situations, faith whispers the same truth it whispered to Abraham, Moses, and David: <em>God is faithful. He keeps His promises. You can trust Him.</em></p>
+
+            <div class="application-section">
+                <h3 class="application-title">
+                    <span>📝</span> This Week's Application
+                </h3>
+                <ul class="application-list">
+                    <li>
+                        <span class="check">✓</span>
+                        <span><strong>Read Hebrews 11 daily.</strong> Each day, choose one faith hero and journal about what they sacrificed and what they gained through faith.</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span><strong>Identify your "invisible."</strong> What is God asking you to believe for that you cannot yet see? Write it down and commit it to prayer.</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span><strong>Take one step of faith.</strong> Is there something God has been prompting you to do that you've been putting off? This week, take that step—not because you can see the outcome, but because you trust the One who does.</span>
+                    </li>
+                    <li>
+                        <span class="check">✓</span>
+                        <span><strong>Share your story.</strong> Tell someone this week about a time God came through for you. Your testimony strengthens both your faith and theirs.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>A Final Word</h2>
+
+            <p>As we close, I want you to remember this: the heroes of Hebrews 11 weren't perfect people. They made mistakes. They had doubts. They sometimes failed spectacularly. But they're in this chapter because, despite everything, <strong>they kept believing</strong>.</p>
+
+            <p>The question isn't whether you'll have moments of doubt or seasons of struggle. The question is: Will you keep walking by faith even when the path is unclear?</p>
+
+            <p>My prayer for you this week is that you would experience the substance of faith in a fresh way—that God's promises would become so real to you that they outweigh any circumstance you face. May you walk by faith, not by sight, knowing that the God who called Abraham, who delivered Moses, and who empowered David is the same God who walks with you today.</p>
+
+            <div class="scripture-block">
+                <p>"Let us run with endurance the race that is set before us, looking unto Jesus, the author and finisher of our faith."</p>
+                <cite>— Hebrews 12:1-2 (NKJV)</cite>
+            </div>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section fade-in">
+            <h4 class="share-title">Share this sermon with others</h4>
+            <div class="share-buttons">
+                <a href="#" class="share-btn" title="Share on Facebook">f</a>
+                <a href="#" class="share-btn" title="Share on Twitter">𝕏</a>
+                <a href="#" class="share-btn" title="Share via Email">✉</a>
+                <a href="#" class="share-btn" title="Copy Link">🔗</a>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        <section class="related-section fade-in">
+            <h3 class="related-title">Continue Your Journey</h3>
+            <div class="related-grid">
+                <a href="#" class="related-card">
+                    <div class="related-card-image">
+                        <img src="images/gods-timing.png" alt="Trusting God's Timing">
+                    </div>
+                    <div class="related-card-content">
+                        <h4 class="related-card-title">Trusting God's Perfect Timing</h4>
+                    </div>
+                </a>
+                <a href="#" class="related-card">
+                    <div class="related-card-image">
+                        <img src="images/prayer-life.png" alt="Prayer Life">
+                    </div>
+                    <div class="related-card-content">
+                        <h4 class="related-card-title">Transforming Your Prayer Life</h4>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </article>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Contact</a>
+                <a href="#">About Us</a>
+            </div>
+            <p class="footer-copy">&copy; 2025 RS Buckner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Reading progress bar
+        const progressBar = document.getElementById('progressBar');
+        const article = document.querySelector('.article-content');
+
+        window.addEventListener('scroll', () => {
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            const progress = Math.min(
+                Math.max((scrollY - articleTop + windowHeight * 0.5) / articleHeight * 100, 0),
+                100
+            );
+
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
