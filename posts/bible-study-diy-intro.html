@@ -200,46 +200,91 @@
             font-size: 1.125rem;
         }
 
-        /* Hero Image */
-        .post-hero {
+        /* Hero Section */
+        .hero {
             position: relative;
-            height: 60vh;
-            min-height: 400px;
-            margin-top: 72px;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
 
-        .post-hero img {
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .post-hero-overlay {
+        .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, var(--bg-primary) 0%, transparent 50%);
+            background:
+                linear-gradient(to top, var(--bg-primary) 0%, transparent 30%),
+                linear-gradient(to bottom, var(--bg-primary) 0%, transparent 30%),
+                linear-gradient(to right, var(--bg-primary) 0%, transparent 20%),
+                linear-gradient(to left, var(--bg-primary) 0%, transparent 20%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 10, 11, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p:last-of-type {
+            margin-bottom: 0;
         }
 
         /* Article Container */
         .article-container {
             max-width: 800px;
-            margin: -120px auto 0;
-            padding: 0 2rem;
+            margin: 0 auto;
+            padding: 4rem 2rem;
             position: relative;
             z-index: 10;
-        }
-
-        /* Article Header */
-        .article-header {
-            margin-bottom: 3rem;
-        }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
         }
 
         .post-category {
@@ -400,21 +445,23 @@
 
         .point-header {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .point-number {
-            width: 48px;
-            height: 48px;
+            width: 67px;
+            height: 67px;
             background: var(--gradient-1);
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Poppins', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--bg-primary);
             flex-shrink: 0;
@@ -422,7 +469,7 @@
 
         .point-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.375rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -685,12 +732,11 @@
 
         @media (max-width: 768px) {
             .header-container { padding: 0.875rem 1rem; }
-            .post-hero { height: 45vh; min-height: 280px; margin-top: 60px; }
-            .article-container { margin-top: -80px; padding: 0 1rem; }
-            .article-header { margin-bottom: 2rem; }
-            .article-title { font-size: 1.75rem; margin-bottom: 1rem; }
-            .article-excerpt { font-size: 1.0625rem; margin-bottom: 1.5rem; }
-            .article-author { flex-direction: column; text-align: center; padding: 1.25rem; }
+            .hero { height: auto; min-height: 500px; }
+            .hero-content { padding: 2rem 1.5rem; }
+            .hero-content h1 { font-size: 1.75rem; }
+            .hero-content p { font-size: 1rem; }
+            .article-container { padding: 3rem 1rem; }
             .article-content { font-size: 1.0625rem; }
             .article-content h2 { font-size: 1.5rem; }
             .scripture-block { padding: 1.5rem; }
@@ -699,8 +745,9 @@
         }
 
         @media (max-width: 480px) {
-            .article-container { padding: 0 0.875rem; }
-            .article-title { font-size: 1.5rem; }
+            .hero-content { padding: 1.5rem 1.25rem; }
+            .hero-content h1 { font-size: 1.5rem; }
+            .article-container { padding: 2rem 0.875rem; }
             .scripture-block { padding: 1.25rem; }
             .sermon-point { padding: 1.25rem; }
             .application-section { padding: 1.5rem; }
@@ -751,28 +798,23 @@
         <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
     </nav>
 
-    <!-- Hero Image -->
-    <div class="post-hero">
-        <img src="../images/Young Girl at Desk.png" alt="Bible Study DIY">
-        <div class="post-hero-overlay"></div>
-    </div>
-
-    <article class="article-container">
-        <!-- Article Header -->
-        <header class="article-header fade-in">
-            <div class="article-meta">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="../images/Young Girl at Desk.png" alt="Bible Study DIY">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in">
+            <div class="hero-meta">
                 <span class="post-category bible-study">Bible Study</span>
                 <span class="article-date">January 2025</span>
             </div>
-            <h1 class="article-title">Bible Study DIY: Do It Yourself</h1>
-            <p class="article-excerpt">Introducing our Regional Midweek series on personal Bible study—empowering you to engage deeply with Scripture and transform your perspective in the sanctuary of God.</p>
-            <div class="article-author">
-                <div class="author-avatar">RS</div>
-                <div class="author-info">
-                    <div class="author-name">RS Buckner</div>
-                </div>
-            </div>
-        </header>
+            <h1>Bible Study DIY: Do It Yourself</h1>
+            <p>Introducing our Regional Midweek series on personal Bible study—empowering you to engage deeply with Scripture and transform your perspective in the sanctuary of God.</p>
+        </div>
+    </section>
+
+    <article class="article-container">
 
         <!-- Article Content -->
         <div class="article-content fade-in fade-in-delay-1">
