@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sermon Notes | RS Buckner</title>
+    <title>All Posts | RS Buckner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -125,233 +125,30 @@
             padding: 7rem 2rem 4rem;
         }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 75vh;
-            min-height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+        /* Page Header */
+        .page-header {
+            margin-bottom: 2rem;
         }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(to top, var(--bg-primary) 0%, transparent 40%),
-                linear-gradient(to bottom, var(--bg-primary) 0%, transparent 40%),
-                linear-gradient(to right, var(--bg-primary) 0%, transparent 35%),
-                linear-gradient(to left, var(--bg-primary) 0%, transparent 35%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            background: rgba(10, 10, 11, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 1.5rem 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 350px;
-            width: 90%;
-            text-align: center;
-        }
-
-        .hero-content h1 {
+        .page-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.75rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-content p {
-            font-size: 0.875rem;
+        .page-subtitle {
             color: var(--text-secondary);
-            line-height: 1.3;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(40, 239, 206, 0.1);
-            border: 1px solid rgba(40, 239, 206, 0.3);
-            border-radius: 100px;
-            color: var(--accent-teal);
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
             font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Featured Post */
-        .featured-post {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            background: var(--bg-card);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .featured-post:hover {
-            border-color: var(--accent-teal);
-            transform: translateY(-4px);
-        }
-
-        .featured-image {
-            position: relative;
-            aspect-ratio: 16/10;
-            overflow: hidden;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .featured-post:hover .featured-image img {
-            transform: scale(1.05);
-        }
-
-        .featured-content {
-            padding: 2.5rem 2.5rem 2.5rem 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .post-category {
-            padding: 0.375rem 0.875rem;
-            background: rgba(106, 89, 229, 0.15);
-            color: var(--accent-purple);
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .post-category.bible-study {
-            background: rgba(40, 239, 206, 0.15);
-            color: var(--accent-teal);
-        }
-
-        .post-category.movie-ministry {
-            background: rgba(251, 124, 79, 0.15);
-            color: var(--accent-orange);
-        }
-
-        .post-category.small-groups {
-            background: rgba(229, 89, 229, 0.15);
-            color: var(--accent-pink);
-        }
-
-        .post-date {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-
-        .featured-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .featured-excerpt {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .post-author {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gradient-2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.875rem;
-        }
-
-        .author-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .author-name {
-            font-weight: 600;
-            font-size: 0.9375rem;
-        }
-
-        .author-role {
-            color: var(--text-muted);
-            font-size: 0.8125rem;
         }
 
         /* Search */
         .search-container {
-            margin-top: 15vh;
+            margin-top: 2rem;
             margin-bottom: 0.75rem;
         }
 
@@ -383,7 +180,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-top: 7.5vh;
+            margin-top: 1.5rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
@@ -412,34 +209,6 @@
         }
 
         /* Posts Grid */
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            margin-top: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-
-        .view-all {
-            color: var(--accent-teal);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.2s;
-        }
-
-        .view-all:hover {
-            gap: 0.75rem;
-        }
-
         .posts-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -485,8 +254,42 @@
             padding: 1.5rem;
         }
 
-        .post-card .post-meta {
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 0.75rem;
+        }
+
+        .post-category {
+            padding: 0.375rem 0.875rem;
+            background: rgba(106, 89, 229, 0.15);
+            color: var(--accent-purple);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .post-category.bible-study {
+            background: rgba(40, 239, 206, 0.15);
+            color: var(--accent-teal);
+        }
+
+        .post-category.movie-ministry {
+            background: rgba(251, 124, 79, 0.15);
+            color: var(--accent-orange);
+        }
+
+        .post-category.small-groups {
+            background: rgba(229, 89, 229, 0.15);
+            color: var(--accent-pink);
+        }
+
+        .post-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
         }
 
         .post-card-title {
@@ -512,135 +315,16 @@
             margin-bottom: 1rem;
         }
 
-        .post-card .post-author {
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .post-card .author-avatar {
-            width: 32px;
-            height: 32px;
-            font-size: 0.75rem;
-        }
-
-        /* Scripture Spotlight */
-        .scripture-section {
-            margin-top: 5rem;
-            padding: 4rem;
-            background: var(--bg-secondary);
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
+        /* No Results */
+        .no-results {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+            display: none;
         }
 
-        .scripture-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-1);
-        }
-
-        .scripture-label {
-            color: var(--accent-teal);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-        }
-
-        .scripture-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 500;
-            line-height: 1.5;
-            max-width: 900px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .scripture-reference {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        /* Newsletter */
-        .newsletter {
-            margin-top: 5rem;
-            padding: 4rem;
-            background: var(--gradient-1);
-            border-radius: 24px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-        }
-
-        .newsletter-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .newsletter h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--bg-primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .newsletter p {
-            color: rgba(10, 10, 11, 0.7);
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 12px;
-            background: rgba(10, 10, 11, 0.1);
-            color: var(--bg-primary);
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(10, 10, 11, 0.5);
-        }
-
-        .newsletter-form button {
-            padding: 1rem 2rem;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .newsletter-form button:hover {
-            transform: scale(1.02);
+        .no-results.visible {
+            display: block;
         }
 
         /* Footer */
@@ -770,18 +454,6 @@
             .posts-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .featured-post {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-content {
-                padding: 2rem;
-            }
-
-            .featured-title {
-                font-size: 1.75rem;
-            }
         }
 
         /* Responsive - Tablets & Small Laptops */
@@ -809,47 +481,12 @@
                 padding: 5.5rem 1rem 3rem;
             }
 
-            .hero {
-                height: auto;
-                min-height: 375px;
+            .page-title {
+                font-size: 2rem;
             }
 
-            .hero-content {
-                padding: 1rem 0.75rem;
-            }
-
-            .hero-content h1 {
-                font-size: 1.375rem;
-            }
-
-            .hero-content p {
-                font-size: 0.7rem;
-            }
-
-            .featured-post {
-                border-radius: 16px;
-            }
-
-            .featured-image {
-                aspect-ratio: 16/9;
-            }
-
-            .featured-content {
-                padding: 1.5rem;
-            }
-
-            .featured-title {
-                font-size: 1.5rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .featured-excerpt {
-                font-size: 0.9375rem;
-                margin-bottom: 1rem;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
+            .page-subtitle {
+                font-size: 1rem;
             }
 
             .filters {
@@ -873,15 +510,6 @@
                 flex-shrink: 0;
             }
 
-            .section-header {
-                margin-top: 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.375rem;
-            }
-
             .posts-grid {
                 grid-template-columns: 1fr;
                 gap: 1.25rem;
@@ -903,52 +531,6 @@
                 font-size: 0.875rem;
             }
 
-            .scripture-section {
-                margin-top: 3rem;
-                padding: 2rem 1.25rem;
-                border-radius: 16px;
-            }
-
-            .scripture-label {
-                font-size: 0.75rem;
-                margin-bottom: 1rem;
-            }
-
-            .scripture-reference {
-                font-size: 0.875rem;
-            }
-
-            .newsletter {
-                margin-top: 3rem;
-                padding: 2rem 1.25rem;
-                border-radius: 16px;
-            }
-
-            .newsletter h2 {
-                font-size: 1.5rem;
-            }
-
-            .newsletter p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            .newsletter-form input {
-                padding: 0.875rem 1.25rem;
-                font-size: 1rem;
-                border-radius: 10px;
-            }
-
-            .newsletter-form button {
-                padding: 0.875rem 1.5rem;
-                border-radius: 10px;
-            }
-
             footer {
                 margin-top: 3rem;
                 padding: 2rem 1rem;
@@ -964,7 +546,7 @@
             }
         }
 
-        /* Responsive - Large Smartphones (iPhone Pro Max, Galaxy S Ultra) */
+        /* Responsive - Large Smartphones */
         @media (max-width: 480px) {
             .header-container {
                 padding: 0.75rem 1rem;
@@ -985,29 +567,21 @@
                 padding: 5rem 0.875rem 2.5rem;
             }
 
-            .hero-header {
-                margin-bottom: 1.75rem;
+            .page-title {
+                font-size: 1.75rem;
             }
 
-            .hero-badge {
-                margin-bottom: 1rem;
-            }
-
-            .hero-title {
-                margin-bottom: 0.75rem;
-            }
-
-            .featured-post:hover {
+            .post-card:hover {
                 transform: none;
             }
 
-            .featured-content {
-                padding: 1.25rem;
+            .post-card-content {
+                padding: 1rem;
             }
 
             .post-meta {
                 gap: 0.75rem;
-                margin-bottom: 0.625rem;
+                margin-bottom: 0.5rem;
             }
 
             .post-category {
@@ -1019,55 +593,6 @@
                 font-size: 0.8125rem;
             }
 
-            .featured-title {
-                font-size: 1.375rem;
-                line-height: 1.25;
-            }
-
-            .featured-excerpt {
-                font-size: 0.875rem;
-                line-height: 1.6;
-                -webkit-line-clamp: 2;
-            }
-
-            .author-avatar {
-                width: 36px;
-                height: 36px;
-                font-size: 0.8125rem;
-            }
-
-            .author-name {
-                font-size: 0.875rem;
-            }
-
-            .author-role {
-                font-size: 0.75rem;
-            }
-
-            .section-header {
-                margin-top: 2rem;
-            }
-
-            .view-all {
-                font-size: 0.875rem;
-            }
-
-            .post-card:hover {
-                transform: none;
-            }
-
-            .post-card-image {
-                aspect-ratio: 16/9;
-            }
-
-            .post-card-content {
-                padding: 1rem;
-            }
-
-            .post-card .post-meta {
-                margin-bottom: 0.5rem;
-            }
-
             .post-card-title {
                 font-size: 1.0625rem;
                 margin-bottom: 0.5rem;
@@ -1075,38 +600,6 @@
 
             .post-card-excerpt {
                 margin-bottom: 0.75rem;
-            }
-
-            .post-card .post-author {
-                padding-top: 0.75rem;
-            }
-
-            .post-card .author-avatar {
-                width: 28px;
-                height: 28px;
-                font-size: 0.6875rem;
-            }
-
-            .scripture-section {
-                padding: 1.75rem 1rem;
-            }
-
-            .newsletter {
-                padding: 1.75rem 1rem;
-            }
-
-            .newsletter h2 {
-                font-size: 1.375rem;
-            }
-
-            .newsletter p {
-                font-size: 0.9375rem;
-            }
-
-            .newsletter-form input,
-            .newsletter-form button {
-                padding: 0.8125rem 1rem;
-                font-size: 0.9375rem;
             }
 
             .footer-links {
@@ -1121,22 +614,14 @@
             }
         }
 
-        /* Responsive - Standard Smartphones (iPhone, Pixel) */
+        /* Responsive - Standard Smartphones */
         @media (max-width: 390px) {
             main {
                 padding: 4.75rem 0.75rem 2rem;
             }
 
-            .hero-subtitle {
-                font-size: 0.9375rem;
-            }
-
-            .featured-content {
-                padding: 1rem;
-            }
-
-            .featured-title {
-                font-size: 1.25rem;
+            .page-title {
+                font-size: 1.5rem;
             }
 
             .filter-btn {
@@ -1144,52 +629,15 @@
                 font-size: 0.75rem;
             }
 
-            .section-title {
-                font-size: 1.25rem;
-            }
-
             .post-card-title {
                 font-size: 1rem;
-            }
-
-            .scripture-section,
-            .newsletter {
-                padding: 1.5rem 0.875rem;
-            }
-        }
-
-        /* Responsive - Small Smartphones */
-        @media (max-width: 320px) {
-            .logo-text {
-                font-size: 1rem;
-            }
-
-            main {
-                padding: 4.5rem 0.625rem 1.75rem;
-            }
-
-            .featured-title {
-                font-size: 1.125rem;
-            }
-
-            .featured-excerpt {
-                display: none;
-            }
-
-            .post-card-excerpt {
-                display: none;
             }
         }
 
         /* Touch device optimizations */
         @media (hover: none) and (pointer: coarse) {
-            .featured-post:hover,
             .post-card:hover {
                 transform: none;
-            }
-
-            .featured-post:active {
-                transform: scale(0.99);
             }
 
             .post-card:active {
@@ -1198,25 +646,6 @@
 
             .filter-btn:active {
                 transform: scale(0.95);
-            }
-        }
-
-        /* Landscape mode for phones */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .hero-header {
-                margin-bottom: 1.5rem;
-            }
-
-            .hero-badge {
-                margin-bottom: 0.75rem;
-            }
-
-            .featured-post {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .featured-image {
-                aspect-ratio: 4/3;
             }
         }
 
@@ -1237,7 +666,7 @@
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <div class="logo-icon"><img src="images/IMG_1350.PNG" alt="RS Buckner"></div>
                 <span class="logo-text">RS Buckner</span>
             </a>
@@ -1262,22 +691,18 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-bg">
-                <img src="images/Floating Gas Luminescent Light (1).png" alt="RS Buckner">
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content fade-in">
-                <h1>Notes, Thoughts, and Everything Else...</h1>
-                <p>Where my faith and interest converge into one continuous narrative</p>
-            </div>
-        </section>
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">All Posts</h1>
+            <p class="page-subtitle">Browse all articles, sermons, and studies</p>
+        </div>
 
-        <!-- Search and Filters -->
+        <!-- Search -->
         <div class="search-container">
             <input type="text" id="searchInput" class="search-input" placeholder="Search posts...">
         </div>
+
+        <!-- Category Filters -->
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="bible-study">Bible Study</button>
@@ -1285,12 +710,7 @@
             <button class="filter-btn" data-filter="small-groups">Small Groups</button>
         </div>
 
-        <!-- Recent Posts -->
-        <section class="section-header">
-            <h2 class="section-title">Latest and Greatest</h2>
-            <a href="posts.html" class="view-all">View all <span>&rarr;</span></a>
-        </section>
-
+        <!-- Posts Grid -->
         <div class="posts-grid">
             <a href="posts/bible-study-diy-01.html" class="post-card fade-in" data-category="bible-study">
                 <div class="post-card-image">
@@ -1331,6 +751,24 @@
                     <p class="post-card-excerpt">Evaluating our hearts as we lift up our eyes to see God working—not ourselves, our strategies, or our plans.</p>
                 </div>
             </a>
+            <a href="posts/that-you-may-believe.html" class="post-card fade-in" data-category="bible-study">
+                <div class="post-card-image">
+                    <img src="images/In a Sunny Garden.png" alt="That You May Believe">
+                </div>
+                <div class="post-card-content">
+                    <div class="post-meta">
+                        <span class="post-category bible-study">Bible Study</span>
+                        <span class="post-date">Jan 2025</span>
+                    </div>
+                    <h3 class="post-card-title">That You May Believe: John 1:1-18</h3>
+                    <p class="post-card-excerpt">We begin a new series on the writings of John—exploring how the Logos became flesh and dwelt among us.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults">
+            <p>No posts found matching your search.</p>
         </div>
 
     </main>
@@ -1385,6 +823,18 @@
         // Category filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const postCards = document.querySelectorAll('.post-card');
+        const noResults = document.getElementById('noResults');
+
+        function updateNoResults() {
+            const visibleCards = document.querySelectorAll('.post-card[style="display: block"], .post-card:not([style*="display"])');
+            let hasVisible = false;
+            postCards.forEach(card => {
+                if (card.style.display !== 'none') {
+                    hasVisible = true;
+                }
+            });
+            noResults.classList.toggle('visible', !hasVisible);
+        }
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1393,9 +843,17 @@
                 btn.classList.add('active');
 
                 const filter = btn.dataset.filter;
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
 
                 postCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
+                    const title = card.querySelector('.post-card-title').textContent.toLowerCase();
+                    const excerpt = card.querySelector('.post-card-excerpt').textContent.toLowerCase();
+                    const category = card.dataset.category;
+
+                    const matchesFilter = filter === 'all' || category === filter;
+                    const matchesSearch = searchTerm === '' || title.includes(searchTerm) || excerpt.includes(searchTerm);
+
+                    if (matchesFilter && matchesSearch) {
                         card.style.display = 'block';
                         setTimeout(() => card.classList.add('visible'), 10);
                     } else {
@@ -1403,6 +861,8 @@
                         card.classList.remove('visible');
                     }
                 });
+
+                updateNoResults();
             });
         });
 
@@ -1429,6 +889,8 @@
                     card.classList.remove('visible');
                 }
             });
+
+            updateNoResults();
         });
     </script>
 </body>
