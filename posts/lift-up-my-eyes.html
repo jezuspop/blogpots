@@ -542,6 +542,46 @@
             padding-bottom: 0;
         }
 
+        /* Numbered Questions */
+        .numbered-questions {
+            list-style: none;
+            padding: 0;
+            counter-reset: question-counter;
+        }
+
+        .numbered-questions li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            counter-increment: question-counter;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .numbered-questions li::before {
+            content: counter(question-counter);
+            background: var(--gradient-1);
+            color: var(--bg-primary);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .numbered-questions li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
         /* Footer */
         footer {
             margin-top: 5rem;
@@ -924,12 +964,12 @@
 
             <div class="application-section">
                 <h3 class="application-title">Questions to Consider</h3>
-                <ul class="application-list">
+                <ol class="numbered-questions">
                     <li>Are you trusting in strategies and plans, or the God behind them?</li>
                     <li>Is God getting the best parts of you—your focus, time, attention, and passion?</li>
                     <li>Are you growing deeper in your connection with God year by year?</li>
                     <li>What would it look like to be "obsessed" with God the way Paul was?</li>
-                </ul>
+                </ol>
             </div>
 
             <p><strong>Lift up your eyes—your help comes from the LORD, the Maker of heaven and earth.</strong></p>

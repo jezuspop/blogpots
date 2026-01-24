@@ -590,6 +590,46 @@
             padding-bottom: 0;
         }
 
+        /* Numbered Questions */
+        .numbered-questions {
+            list-style: none;
+            padding: 0;
+            counter-reset: question-counter;
+        }
+
+        .numbered-questions li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            counter-increment: question-counter;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .numbered-questions li::before {
+            content: counter(question-counter);
+            background: var(--gradient-1);
+            color: var(--bg-primary);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .numbered-questions li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
         /* Footer */
         footer {
             margin-top: 5rem;
@@ -927,11 +967,11 @@
 
             <div class="application-section">
                 <h3 class="application-title">Questions to Consider</h3>
-                <ul class="application-list">
+                <ol class="numbered-questions">
                     <li>Do you see Jesus as the light of your life?</li>
                     <li>How are you preaching his light to the world around you?</li>
                     <li>Let 2025 be a year of sharing the Light of the gospel message—telling everyone about God's word, His Logos.</li>
-                </ul>
+                </ol>
             </div>
 
             <p><strong>The answer to the universe was and is here, and he wants to bring light to your life.</strong></p>
