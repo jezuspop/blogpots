@@ -504,6 +504,34 @@
             font-size: 0.875rem;
         }
 
+        /* Back to Posts */
+        .back-to-posts {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            z-index: 50;
+        }
+
+        .back-to-posts:hover {
+            background: var(--gradient-1);
+            color: var(--bg-primary);
+            border-color: transparent;
+            transform: translateX(-4px);
+        }
+
         /* Back to Top */
         .back-to-top {
             position: fixed;
@@ -703,6 +731,7 @@
         </div>
     </footer>
 
+    <a href="../posts.html" class="back-to-posts" title="Back to all posts">←</a>
     <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 
     <script>
