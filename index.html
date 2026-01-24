@@ -1274,17 +1274,6 @@
             </div>
         </section>
 
-        <!-- Search and Filters -->
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search posts...">
-        </div>
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="bible-study">Bible Study</button>
-            <button class="filter-btn" data-filter="movie-ministry">Movie Ministry</button>
-            <button class="filter-btn" data-filter="small-groups">Small Groups</button>
-        </div>
-
         <!-- Recent Posts -->
         <section class="section-header">
             <h2 class="section-title">Latest and Greatest</h2>
@@ -1381,55 +1370,6 @@
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Category filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const postCards = document.querySelectorAll('.post-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active state
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const filter = btn.dataset.filter;
-
-                postCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => card.classList.add('visible'), 10);
-                    } else {
-                        card.style.display = 'none';
-                        card.classList.remove('visible');
-                    }
-                });
-            });
-        });
-
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase().trim();
-            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
-
-            postCards.forEach(card => {
-                const title = card.querySelector('.post-card-title').textContent.toLowerCase();
-                const excerpt = card.querySelector('.post-card-excerpt').textContent.toLowerCase();
-                const category = card.dataset.category;
-
-                const matchesSearch = searchTerm === '' || title.includes(searchTerm) || excerpt.includes(searchTerm);
-                const matchesFilter = activeFilter === 'all' || category === activeFilter;
-
-                if (matchesSearch && matchesFilter) {
-                    card.style.display = 'block';
-                    setTimeout(() => card.classList.add('visible'), 10);
-                } else {
-                    card.style.display = 'none';
-                    card.classList.remove('visible');
-                }
-            });
-        });
     </script>
 </body>
 </html>
