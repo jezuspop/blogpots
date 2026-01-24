@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bible Study DIY 00: Introduction | RS Buckner</title>
+    <title>Bible Study DIY 01: The Power of Storytelling | RS Buckner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -308,53 +308,6 @@
             font-size: 0.875rem;
         }
 
-        .article-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-excerpt {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .article-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .author-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--gradient-2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 1.25rem;
-        }
-
-        .author-info {
-            flex: 1;
-        }
-
-        .author-name {
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin-bottom: 0.25rem;
-        }
-
         /* Article Content */
         .article-content {
             font-family: 'Poppins', sans-serif;
@@ -553,8 +506,15 @@
             color: var(--text-primary);
         }
 
-        /* Assessment Box */
-        .assessment-box {
+        .series-info li.current {
+            background: rgba(106, 89, 229, 0.1);
+            margin: 0 -1.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        /* Quote Block */
+        .quote-block {
             margin: 2.5rem 0;
             padding: 2rem;
             background: linear-gradient(135deg, rgba(106, 89, 229, 0.1) 0%, rgba(229, 89, 229, 0.1) 100%);
@@ -562,7 +522,54 @@
             border: 1px solid rgba(106, 89, 229, 0.2);
         }
 
-        .assessment-box h3 {
+        .quote-block p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .quote-block cite {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-style: normal;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .highlight-box .stat {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box .label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .resources-section h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
@@ -570,75 +577,28 @@
             margin-bottom: 1.5rem;
         }
 
-        .assessment-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .assessment-box li {
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            background: rgba(10, 10, 11, 0.4);
-            border-radius: 10px;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .assessment-box li:last-child {
-            margin-bottom: 0;
-        }
-
-        .assessment-box li strong {
-            color: var(--accent-teal);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        /* Application Section */
-        .application-section {
-            margin: 3rem 0;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, rgba(106, 89, 229, 0.1) 0%, rgba(229, 89, 229, 0.1) 100%);
-            border-radius: 16px;
-            border: 1px solid rgba(106, 89, 229, 0.2);
-        }
-
-        .application-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .application-list {
+        .resources-section ul {
             list-style: none;
             padding: 0;
         }
 
-        .application-list li {
-            padding: 1rem 0;
+        .resources-section li {
+            padding: 0.75rem 0;
             border-bottom: 1px solid var(--border-color);
             color: var(--text-secondary);
-            font-size: 1.0625rem;
-            line-height: 1.7;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
         }
 
-        .application-list li::before {
-            content: ">";
-            color: var(--accent-teal);
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .application-list li:last-child {
+        .resources-section li:last-child {
             border-bottom: none;
-            padding-bottom: 0;
+        }
+
+        .resources-section a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        .resources-section a:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -750,8 +710,6 @@
             .article-container { padding: 2rem 0.875rem; }
             .scripture-block { padding: 1.25rem; }
             .sermon-point { padding: 1.25rem; }
-            .application-section { padding: 1.5rem; }
-            .assessment-box { padding: 1.5rem; }
         }
 
         /* Animations */
@@ -801,7 +759,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
-            <img src="../images/Young Girl at Desk.png" alt="Bible Study DIY">
+            <img src="../images/Young Girl at Desk.png" alt="Bible Study DIY Session 01">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content fade-in">
@@ -809,8 +767,8 @@
                 <span class="post-category bible-study">Bible Study</span>
                 <span class="article-date">January 2025</span>
             </div>
-            <h1>Bible Study DIY 00: Introduction</h1>
-            <p>Introducing our Regional Midweek series on personal Bible study—empowering you to engage deeply with Scripture and transform your perspective in the sanctuary of God.</p>
+            <h1>Bible Study DIY 01: The Power of Storytelling</h1>
+            <p>What can good storytelling do? Discover how narratives shape meaning and why understanding genre transforms how we read Scripture.</p>
         </div>
     </section>
 
@@ -819,104 +777,222 @@
         <!-- Article Content -->
         <div class="article-content fade-in fade-in-delay-1">
 
-            <p>The "DIY" series emphasizes that we have the ability to have great Bible study. This isn't about advocating self-reliance, but rather <strong>empowering personal engagement with Scripture</strong>. When we learn to study God's Word effectively, something transformative happens.</p>
-
-            <div class="scripture-block">
-                <p>"But then one day I was brought into the sanctuaries of God, and in the light of glory, my distorted perspective vanished."</p>
-                <cite>— Psalm 73:17 (TPT)</cite>
-            </div>
-
-            <p>Our fight is to get into the sanctuary. It's like being transported into another dimension—that is what good Bible study and connection with God does. It shifts everything.</p>
-
-            <h2>How Would You Rate Your Bible Study?</h2>
-
-            <p>Before we dive into this series, take a moment to honestly assess where you are:</p>
-
-            <div class="assessment-box">
-                <h3>Self-Assessment</h3>
-                <ul>
-                    <li><strong>Going great; need more of a challenge</strong> What's the next level for you?</li>
-                    <li><strong>Going ok; need a clear focus</strong> You need something specific to study</li>
-                    <li><strong>Not going well; need help</strong> Feeling inconsistent and uninspired</li>
-                    <li><strong>Non-existent; don't know where to start</strong> You need someone to sit down and show you</li>
-                </ul>
-            </div>
-
-            <p>Wherever you find yourself, this series is designed to meet you there and help you grow.</p>
-
-            <h2>What We'll Cover</h2>
-
-            <p>Over the course of this series, we'll explore five essential topics that will equip you for meaningful Bible study:</p>
-
             <div class="series-info">
-                <h4>Series Topics Overview</h4>
+                <h4>DIY Series Topics</h4>
                 <ol>
-                    <li><strong>Bible Study Prep</strong> — What are the tools you need to have great Bible study?</li>
+                    <li class="current"><strong>The Power of Storytelling</strong> — What can good storytelling do?</li>
+                    <li><strong>Bible Study Prep</strong> — What tools do you need for great Bible study?</li>
                     <li><strong>Ancient Study Methods</strong> — How did ancient readers study the Bible?</li>
-                    <li><strong>Anatomy of Storytelling</strong> — What are the specific body parts of storytelling?</li>
-                    <li><strong>Types of Story Genre</strong> — What are the different styles and themes of storytelling?</li>
-                    <li><strong>Biblical Study Walkthrough</strong> — Let's walk through a typical Bible study together</li>
+                    <li><strong>Contemporary Study Methods</strong> — What are the ways people study the Bible today?</li>
+                    <li><strong>My Bible Study Walkthrough</strong> — Let's walk through the way I study</li>
                 </ol>
             </div>
 
             <div class="sermon-point">
                 <div class="point-header">
                     <div class="point-number">1</div>
-                    <h3 class="point-title">The Desire to Pursue</h3>
+                    <h3 class="point-title">Enter the Story</h3>
                 </div>
                 <div class="point-content">
-                    <p>The Bible truly emphasizes that a pursuit of God should be a <strong>life-giving, faith-filled action</strong> that fosters a deep relationship. Consider what Scripture tells us:</p>
-                    <ul>
-                        <li><strong>Ecclesiastes 3:11</strong> — God has set eternity into the hearts of men. Humanity was created for a relationship with God.</li>
-                        <li><strong>John 10:10</strong> — Satan wants to destroy all the good God created. We must be careful not to allow luxuries to distract or hinder our pursuit of God.</li>
-                        <li><strong>Psalm 34:4</strong> — When we seek the Lord, He answers us. He delivers us from all our fears.</li>
-                        <li><strong>Jeremiah 29:13</strong> — God's pursuit requires wholehearted searching. We find Him when we seek Him fully.</li>
-                    </ul>
+                    <p>The Bible is an incredible treasure for those who study it. We have all benefited from God's word. But when thinking about going deeper in Bible study, we're confronted with the question Jesus gave to one of the teachers of the law:</p>
                 </div>
+            </div>
+
+            <div class="scripture-block">
+                <p>"On one occasion an expert in the law stood up to test Jesus. 'Teacher,' he asked, 'what must I do to inherit eternal life?' 'What is written in the Law?' he replied. 'How do you read it?'"</p>
+                <cite>— Luke 10:25-26 (NIV)</cite>
+            </div>
+
+            <h3>Key Question: How Do You Read Your Bible?</h3>
+
+            <ul>
+                <li>It is important <strong>how</strong> we read it</li>
+                <li>Important when studying the Bible to help people become Christians</li>
+                <li>Still important as we grow older as Christians</li>
+            </ul>
+
+            <div class="quote-block">
+                <p>"Understanding the meaning of the text as much as we can given in the place, time and situation in which God revealed His truth."</p>
+                <cite>— Dr. George Guthrie</cite>
             </div>
 
             <div class="sermon-point">
                 <div class="point-header">
                     <div class="point-number">2</div>
-                    <h3 class="point-title">Become Like Children</h3>
+                    <h3 class="point-title">Modes of Communication</h3>
                 </div>
                 <div class="point-content">
-                    <p>Jesus gives us a powerful picture of the posture we need when approaching Scripture and our relationship with God:</p>
+                    <p>Different modes of communication serve different purposes:</p>
+                    <ul>
+                        <li><strong>Movie (Narrative)</strong> — Tells a story through characters and plot</li>
+                        <li><strong>News (Informative)</strong> — Presents facts and current events</li>
+                        <li><strong>Opinion (Persuasive)</strong> — Argues a point of view</li>
+                        <li><strong>Recipe (Instructional)</strong> — Provides step-by-step directions</li>
+                    </ul>
+                    <p><em>"Check the Hot Sheets"</em> — Men in Black</p>
+                    <p>There is some truth in every genre—it just takes unpacking to better understand. For example, Star Wars contains truths about redemption and the power of friendship.</p>
+                </div>
+            </div>
+
+            <h3>Real Dangers of Misunderstanding Genre</h3>
+
+            <ul>
+                <li>Missing the rules of interpretation can mean life or death</li>
+                <li>Mistaking an instructional sign for an opinion piece could get you killed</li>
+                <li>This awareness is especially important when reading Scripture</li>
+            </ul>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">3</div>
+                    <h3 class="point-title">Literary Genre</h3>
+                </div>
+                <div class="point-content">
+                    <p><strong>Definition:</strong> Literary genre is the form used (by the author) and the rules governing its interpretation.</p>
+                    <ul>
+                        <li>Different types of storytelling have specific rules that apply</li>
+                        <li>Knowing the genre helps tune your mind to interpret information correctly</li>
+                        <li>We do this intuitively in everyday life</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Types of Writing Styles</h3>
+
+            <ul>
+                <li><strong>Expository</strong> — Exposes/sets forth facts (textbooks, journalism, technical writing)</li>
+                <li><strong>Descriptive</strong> — Helps reader visualize in detail (fiction, poetry, advertising)</li>
+                <li><strong>Persuasive</strong> — Influences reader to assume author's point of view (ads, editorials, reviews)</li>
+                <li><strong>Narrative</strong> — Tells a story with characters (fiction, biographies, anecdotes)</li>
+            </ul>
+
+            <h3>Biblical Literary Genres</h3>
+
+            <ul>
+                <li><strong>Apocalyptic</strong> (like a Comic Book) — Exaggerated language, symbolic imagery</li>
+                <li><strong>Narrative</strong> (like a Novel) — Characters, meaning, symbolism, foreshadowing</li>
+                <li><strong>Poetic</strong> (like an Album) — Word pictures, very descriptive, artistic, purposeful structure</li>
+                <li><strong>Legal/Instructional</strong> (like the Constitution) — To the point, factual, orderly</li>
+            </ul>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">4</div>
+                    <h3 class="point-title">The Power of Storytelling</h3>
+                </div>
+                <div class="point-content">
+                    <p><strong>The "Significant Objects" Experiment:</strong> NY Times journalist Rob Walker and writer Joshua Glenn wanted to see if telling a story about an ordinary object could make people think it was worth more money.</p>
+                    <ul>
+                        <li>Objects purchased for $1.25 on average from thrift stores</li>
+                        <li>Over 200 writers contributed short stories for each item</li>
+                        <li>Items auctioned on eBay with the stories as descriptions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="stat">$0.75 → $81</div>
+                <div class="label">One object's transformation through storytelling</div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="stat">$121 → $8,000</div>
+                <div class="label">Total results: What stories can do to perceived value</div>
+            </div>
+
+            <h3>How God Uses Storytelling</h3>
+
+            <ul>
+                <li>Storytelling makes up approximately <strong>50% of the Old Testament</strong></li>
+                <li>Storytelling makes up approximately <strong>60% of the New Testament</strong></li>
+            </ul>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">5</div>
+                    <h3 class="point-title">Rules for Interpreting Biblical Narrative</h3>
+                </div>
+                <div class="point-content">
+                    <ul>
+                        <li><strong>Interpret through plot and character development</strong> — Understand theological points by tracing story arcs, key turning points, and character growth or failure</li>
+                        <li><strong>Look for implicit theology, not overt doctrine</strong> — Narratives often teach through example or consequence, not direct command</li>
+                        <li><strong>Pay attention to setting and sequence</strong> — Time, place, and narrative flow are essential to meaning and application</li>
+                        <li><strong>Look for symbolism, repetition, and double meaning</strong> — These are embedded intentionally within the text</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Common Biblical Symbols</h3>
+
+            <ul>
+                <li><strong>Numbers:</strong> 1, 2, 3, 6, 7, 10, 12</li>
+                <li><strong>Animals:</strong> snake, dove, lamb, sheep, lion, donkey, bull, fox, vulture</li>
+                <li><strong>Nature:</strong> mountain, sea, valley, garden, rock, fire, water, vine, tree, seed</li>
+                <li><strong>Food:</strong> oil, bread, honey, meat, wine, fish, grapes, figs, fruit, salt</li>
+            </ul>
+
+            <h3>Key Concepts</h3>
+
+            <p><strong>Symbolism:</strong> Words with ambiguous meanings require careful analysis to determine if they should be interpreted literally or figuratively. Following word patterns across related passages helps reveal intended meaning.</p>
+
+            <p><strong>Repetition:</strong> Look for recurring patterns in images, words, or themes. Striking phrases at pivotal story moments often highlight key developments or themes.</p>
+
+            <p><strong>Double Meaning:</strong> Look for ambiguous or ironic phrases with multiple possible meanings. Pay attention to figurative language and how characters' roles shape interpretations.</p>
+
+            <div class="sermon-point">
+                <div class="point-header">
+                    <div class="point-number">6</div>
+                    <h3 class="point-title">Practice: Ruth 1:1-5</h3>
+                </div>
+                <div class="point-content">
+                    <p>Let's apply these principles to a real passage:</p>
                 </div>
             </div>
 
             <div class="scripture-block">
-                <p>"Jesus called a little child to come to him. He stood the child in front of the followers. Then he said, 'The truth is, you must change your thinking and become like little children. If you don't do this, you will never enter God's kingdom.'"</p>
-                <cite>— Matthew 18:2-3 (ERV)</cite>
+                <p>"In the days when the judges ruled, there was a famine in the land. So a man from Bethlehem in Judah, together with his wife and two sons, went to live for a while in the country of Moab. The man's name was Elimelek, his wife's name was Naomi, and the names of his two sons were Mahlon and Kilion. They were Ephrathites from Bethlehem, Judah. And they went to Moab and lived there. Now Elimelek, Naomi's husband, died, and she was left with her two sons. They married Moabite women, one named Orpah and the other Ruth. After they had lived there about ten years, both Mahlon and Kilion also died, and Naomi was left without her two sons and her husband."</p>
+                <cite>— Ruth 1:1-5 (NIV)</cite>
             </div>
 
-            <p>What childlike qualities should we embrace as we approach Bible study?</p>
+            <h3>Clues from Setting and Context</h3>
 
             <ul>
-                <li><strong>Humility</strong> — Coming with an open, teachable spirit</li>
-                <li><strong>Trust</strong> — Believing what God says is true</li>
-                <li><strong>Forgiveness</strong> — Letting go of past hurts and offenses</li>
-                <li><strong>Purity</strong> — Approaching with clean motives</li>
-                <li><strong>Joy</strong> — Finding delight in discovery</li>
-                <li><strong>Wonder</strong> — Being amazed by God's Word</li>
-                <li><strong>Fascination</strong> — Captivated by the stories and truths</li>
-                <li><strong>Curiosity</strong> — Always asking questions and wanting to learn more</li>
+                <li><strong>"In the days when judges ruled"</strong> — Judges 21:25: "In those days Israel had no king; everyone did as they saw fit."</li>
+                <li><strong>"A famine in the land"</strong> — Both literal famine and spiritual famine at the end of Judges</li>
+                <li><strong>"Bethlehem"</strong> ("house of bread") in <strong>"Judah"</strong> ("praise") — They left the land of Bread and Praise due to famine</li>
             </ul>
 
-            <h2>Our Bible Study Journey</h2>
+            <h3>Clues from Names</h3>
 
-            <p>We are excited to learn how to explore our Bibles together. As we begin this journey:</p>
+            <ul>
+                <li><strong>Moab</strong> — "waste; nothingness" (Lot's son, born of incest in Genesis 19; Psalm 108:9 calls it "God's washbasin")</li>
+                <li><strong>Elimelek</strong> — "God is my king"</li>
+                <li><strong>Naomi</strong> — "Pleasant, beauty and grace"</li>
+                <li><strong>Mahlon</strong> — "Sickly, weak"</li>
+                <li><strong>Kilion</strong> — "Wasting away"</li>
+                <li><strong>Ephrathites</strong> — "Fruitful" (further emphasis of being far from blessing)</li>
+                <li><strong>Ruth</strong> — "Beauty; something worth seeing; friendship"</li>
+                <li><strong>Orpah</strong> — "Fawn"</li>
+            </ul>
 
-            <div class="application-section">
-                <h3 class="application-title">Where This Series Meets You</h3>
-                <ul class="application-list">
-                    <li>For some, this is a <strong>reminder</strong> of what you already know</li>
-                    <li>For some, this is an <strong>addition</strong> to your existing study habits</li>
-                    <li>For others, this will be <strong>learning for the first time</strong></li>
+            <h3>Clues from Numbers and Repetition</h3>
+
+            <ul>
+                <li><strong>"Ten years"</strong> — Number ten symbolizes completeness (10 Commandments, 10 generations Adam to Noah, 10 plagues, etc.)</li>
+                <li><strong>"Turning back"</strong> — The phrase appears 10 times in chapter 1, possibly connecting to Lot's wife who "turned back"</li>
+                <li>This is treasure hunting—you can see how far the rabbit hole goes!</li>
+            </ul>
+
+            <div class="resources-section">
+                <h3>Resources for Further Study</h3>
+                <ul>
+                    <li><a href="https://biblicaltraining.org/learn/foundations/th102-how-to-study-the-bible" target="_blank">How to Study the Bible Series</a> — biblicaltraining.org</li>
+                    <li><strong>Reading the Bible Better</strong> by George H. Guthrie</li>
+                    <li><strong>Dictionary of Biblical Imagery</strong></li>
+                    <li><a href="https://significantobjects.com" target="_blank">Significant Objects Website</a></li>
+                    <li><a href="https://chrisharrison.net/index.php/Visualizations/BibleViz" target="_blank">Bible Cross-Reference Visualization</a></li>
                 </ul>
             </div>
-
-            <p>No matter where you're starting from, the goal is the same: to be brought into the sanctuaries of God where, in the light of glory, our distorted perspectives vanish. <strong>Let's learn to study the Bible together.</strong></p>
 
         </div>
     </article>
