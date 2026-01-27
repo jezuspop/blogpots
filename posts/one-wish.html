@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="../images/IMG_1350.jpg">
+    <link rel="apple-touch-icon" href="../images/IMG_1350.jpg">
+    <title>One Wish | RS Buckner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #16161a;
+            --bg-card-hover: #1c1c21;
+            --text-primary: #efefe5;
+            --text-secondary: #8a8a8a;
+            --text-muted: #5a5a5a;
+            --accent-teal: #a855f7;
+            --accent-purple: #6a59e5;
+            --accent-orange: #fb7c4f;
+            --accent-pink: #e559e5;
+            --border-color: #2a2a2e;
+            --gradient-1: linear-gradient(135deg, #6a59e5, #e559e5);
+            --gradient-2: linear-gradient(135deg, #6a59e5, #e559e5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            padding: 0.625rem 1.25rem;
+            background: var(--gradient-1);
+            color: var(--bg-primary) !important;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 11, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--accent-teal);
+        }
+
+        .mobile-nav .nav-cta {
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-1);
+            color: var(--bg-primary) !important;
+            border-radius: 12px;
+            font-size: 1.125rem;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            z-index: 101;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to top, var(--bg-primary) 0%, transparent 50%),
+                linear-gradient(to bottom, var(--bg-primary) 0%, transparent 50%),
+                linear-gradient(to right, var(--bg-primary) 0%, transparent 40%),
+                linear-gradient(to left, var(--bg-primary) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 10, 11, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 2.5rem 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-category {
+            padding: 0.375rem 0.875rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .post-category.discussion-group {
+            background: rgba(229, 89, 229, 0.15);
+            color: var(--accent-pink);
+        }
+
+        .article-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .article-content {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 3rem 0 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content strong {
+            color: var(--text-primary);
+        }
+
+        /* Scripture Block */
+        .scripture-block {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .scripture-block p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.125rem;
+            font-style: italic;
+            line-height: 1.9;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .scripture-block cite {
+            display: block;
+            font-style: normal;
+            color: var(--accent-teal);
+            font-size: 0.9375rem;
+            font-weight: 500;
+        }
+
+        /* Discussion Question */
+        .discussion-question {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+            flex-shrink: 0;
+        }
+
+        .question-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-pink);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .discussion-question p {
+            color: var(--text-primary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Opening Question Box */
+        .opening-question {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(229, 89, 229, 0.1) 0%, rgba(106, 89, 229, 0.1) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(229, 89, 229, 0.2);
+        }
+
+        .opening-question h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .opening-question p {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .opening-question p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Application Section */
+        .application-section {
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(106, 89, 229, 0.1) 0%, rgba(229, 89, 229, 0.1) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(106, 89, 229, 0.2);
+        }
+
+        .application-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .application-section p {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Back to Posts */
+        .back-to-posts {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            z-index: 50;
+        }
+
+        .back-to-posts:hover {
+            background: var(--gradient-1);
+            color: var(--bg-primary);
+            border-color: transparent;
+            transform: translateX(-4px);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 50;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gradient-1);
+            color: var(--bg-primary);
+            border-color: transparent;
+            transform: translateY(-4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav { display: none; }
+            .menu-toggle { display: flex; }
+            .mobile-nav { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { padding: 0.875rem 1rem; }
+            .hero { height: 50vh; min-height: 350px; }
+            .hero-content { padding: 1.5rem; }
+            .hero-content h1 { font-size: 1.5rem; }
+            .hero-content p { font-size: 1rem; }
+            .article-container { padding: 2rem 1rem; }
+            .scripture-block { padding: 1.5rem; }
+            .discussion-question { padding: 1.25rem; }
+            .application-section { padding: 1.5rem; }
+            .footer-content { flex-direction: column; gap: 1.25rem; }
+        }
+
+        @media (max-width: 480px) {
+            .article-container { padding: 1.5rem 0.875rem; }
+            .hero-content { padding: 1.25rem; }
+            .opening-question { padding: 1.25rem; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon"><img src="../images/IMG_1350.jpg" alt="RS Buckner"></div>
+                <span class="logo-text">RS Buckner</span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Posts</a>
+                <a href="../about.html">About</a>
+                <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        <a href="../index.html">Home</a>
+        <a href="../posts.html">Posts</a>
+        <a href="../about.html">About</a>
+        <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="../images/One Wish Discussion Group.png" alt="One Wish">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in">
+            <div class="hero-meta">
+                <span class="post-category discussion-group">Discussion Group</span>
+                <span class="article-date">January 2026</span>
+            </div>
+            <h1>One Wish</h1>
+            <p>If you had one wish, what would you wish for? Exploring the value of the soul through Mark 8:34-38.</p>
+        </div>
+    </section>
+
+    <article class="article-container">
+
+        <div class="article-content fade-in fade-in-delay-1">
+
+            <div class="opening-question">
+                <h3>Short Story</h3>
+                <p><em>A new antique shop opens up on the corner near your neighborhood. You walk in one day to browse, and the merchant greets you warmly. You end up talking for hours—he shares how he came to the city, the stress of starting over, and you listen. When you finally check the time and realize you need to go, he thanks you. As a gesture of gratitude, he offers you any item in his shop.</em></p>
+                <p><em>Your eye catches a fascinating wooden chest in the corner—dark wood with ornate gold trim. He hands it to you, and you rush off to your next appointment. That night, you finally sit down to examine it. While running your fingers along the inside, you notice a hidden notch. You press it, and a secret drawer pops open. Inside is a golden lamp.</em></p>
+                <p><em>On the bottom of the lamp, there's an inscription in ancient script. You take a photo and translate it. It reads: 'The keeper of this lamp is granted but one wish.'</em></p>
+            </div>
+
+            <div class="opening-question">
+                <h3>Opening Question</h3>
+                <p>If you had one wish—and only one—what would you wish for?</p>
+                <p><strong>Follow-up:</strong> How would that wish change your life? Would it bring you lasting contentment—or might there be unintended consequences?</p>
+            </div>
+
+            <h2>Scripture Passage</h2>
+
+            <div class="scripture-block">
+                <p>"Then he called the crowd to him along with his disciples and said: 'Whoever wants to be my disciple must deny themselves and take up their cross and follow me. For whoever wants to save their life will lose it, but whoever loses their life for me and for the gospel will save it. What good is it for someone to gain the whole world, yet forfeit their soul? Or what can anyone give in exchange for their soul? If anyone is ashamed of me and my words in this adulterous and sinful generation, the Son of Man will be ashamed of them when he comes in his Father's glory with the holy angels.'"</p>
+                <cite>— Mark 8:34-38 (NIV)</cite>
+            </div>
+
+            <div class="scripture-block">
+                <p>"For God saved us and called us to live a holy life. He did this, not because we deserved it, but because that was his plan from before the beginning of time—to show us his grace through Christ Jesus. And now he has made all of this plain to us by the appearing of Christ Jesus, our Savior. He broke the power of death and illuminated the way to life and immortality through the Good News."</p>
+                <cite>— 2 Timothy 1:9-10 (NLT)</cite>
+            </div>
+
+            <h2>Discussion Questions</h2>
+
+            <div class="discussion-question">
+                <div class="question-header">
+                    <div class="question-number">1</div>
+                    <span class="question-label">Discussion</span>
+                </div>
+                <p>Jesus asks, 'What good is it for someone to gain the whole world, yet forfeit their soul?' (v. 36). Why do you think people still chase after things that can't ultimately satisfy them?</p>
+            </div>
+
+            <div class="discussion-question">
+                <div class="question-header">
+                    <div class="question-number">2</div>
+                    <span class="question-label">Discussion</span>
+                </div>
+                <p>Studies show that 70% of lottery winners lose everything within a few years—many say winning 'ruined their lives.' How does this confirm what Jesus is saying in this passage?</p>
+            </div>
+
+            <div class="discussion-question">
+                <div class="question-header">
+                    <div class="question-number">3</div>
+                    <span class="question-label">Discussion</span>
+                </div>
+                <p>According to 2 Timothy 1:9-10, what has Jesus offered us that no wish or worldly gain could ever provide? What does it mean that He 'broke the power of death and illuminated the way to life'?</p>
+            </div>
+
+            <div class="application-section">
+                <h3 class="application-title">Conclusion</h3>
+                <p>Movies like Aladdin sell us a fantasy: that one wish could change everything. But Jesus says nothing in the world—not wealth, not success, not even getting everything you ever wanted—can compare to the value of your soul. The Christian faith offers something better than a genie and a magic lamp. We have Jesus and the Gospel: a Savior who broke the power of death and illuminated the way to a life that cannot decay. No amount of wishes could ever come close.</p>
+            </div>
+
+            <div class="application-section">
+                <h3 class="application-title">Next Step</h3>
+                <p>This week, take an honest inventory of what you're chasing. Is it something that could 'gain the whole world' but leave your soul empty? Spend time reading Mark 8:34-38 and ask yourself: What would it look like to stop saving my life and start losing it for Jesus and the Gospel?</p>
+            </div>
+
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Posts</a>
+                <a href="../about.html">About</a>
+                <a href="mailto:richard.buckner@gpcc.org">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2025 RS Buckner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="../posts.html" class="back-to-posts" title="Back to all posts">←</a>
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Reading progress bar
+        const progressBar = document.getElementById('progressBar');
+        const article = document.querySelector('.article-content');
+
+        window.addEventListener('scroll', () => {
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            const progress = Math.min(
+                Math.max((scrollY - articleTop + windowHeight * 0.5) / articleHeight * 100, 0),
+                100
+            );
+
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
