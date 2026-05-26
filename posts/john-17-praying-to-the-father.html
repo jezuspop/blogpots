@@ -64,6 +64,13 @@
         .point-title { font-size: 1.45rem; }
         .quote-block, .application-section { margin: 2.6rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(106,89,229,.12), rgba(229,89,229,.1)); border-radius: 16px; }
         .quote-block p { color: var(--text); font-style: italic; }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 2.5rem 0; }
+        .stat-card { padding: 1.75rem; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; text-align: center; }
+        .stat-number { display: block; margin-bottom: .65rem; color: var(--purple); font: 700 1.75rem Poppins, sans-serif; line-height: 1.1; }
+        .stat-label { display: block; color: var(--text); font-weight: 700; margin-bottom: .45rem; }
+        .stat-note { color: var(--quiet); font-size: .92rem; line-height: 1.55; }
+        .stats-wide { grid-column: 1 / -1; }
+        .stats-wide .stat-number { font-size: 1.55rem; }
         footer { margin-top: 4rem; padding: 3rem 2rem; border-top: 1px solid var(--border); text-align: center; }
         .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem; }
         .footer-links a { color: var(--quiet); text-decoration: none; }
@@ -78,6 +85,8 @@
             .hero-content { padding: 2rem 1.5rem; }
             .article-container { padding: 3rem 1rem; }
             .scripture-block, .sermon-point, .quote-block, .application-section { padding: 1.4rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-card { padding: 1.4rem; }
             .back-to-posts { display: none; }
         }
     </style>
@@ -121,7 +130,7 @@
         <div class="article-content">
             <h2>Opening Thought</h2>
             <div class="quote-block">
-                <p>How you view God is how you will pray to him.</p>
+                <p>How you view God is how you will pray to him?</p>
             </div>
             <p>John 17 is Jesus' longest recorded prayer. It comes after the upper-room teaching and before the arrest, trial, and cross. The hour has come. The pressure is real. The disciples are confused. The world is hostile. And Jesus prays.</p>
 
@@ -166,6 +175,34 @@
 
             <h3>Jesus Reveals the Father</h3>
             <p>Father-language is one of Jesus' dominant ways of speaking about God in the Gospels. The contrast with the Old Testament is striking: the Old Testament is much larger, but direct God-as-Father language is comparatively rare.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">180+</span>
+                    <span class="stat-label">Gospel References</span>
+                    <p class="stat-note">Jesus uses Father-language more than 180 times in the Gospels.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">120</span>
+                    <span class="stat-label">In John's Gospel</span>
+                    <p class="stat-note">The Gospel of John alone uses Father-language around 120 times.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15-20</span>
+                    <span class="stat-label">Old Testament References</span>
+                    <p class="stat-note">The Old Testament is much larger, yet has only about 15-20 references to God as Father.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Prayer Connections</span>
+                    <p class="stat-note">Only about two Old Testament references connect God as Father directly to prayer.</p>
+                </div>
+                <div class="stat-card stats-wide">
+                    <span class="stat-number">929 chapters -> 260 chapters</span>
+                    <span class="stat-label">The Contrast is Striking</span>
+                    <p class="stat-note">The Old Testament has 929 chapters and about 622,700 words. The New Testament has 260 chapters and about 184,600 words, yet Father-language becomes far more prominent through Jesus.</p>
+                </div>
+            </div>
 
             <div class="scripture-block">
                 <p>"All things have been committed to me by my Father. No one knows who the Son is except the Father, and no one knows who the Father is except the Son and those to whom the Son chooses to reveal him."</p>
