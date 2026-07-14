@@ -205,38 +205,45 @@
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 460px;
+            min-height: 92vh;
             padding: 7rem 1.5rem 4rem;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background:
-                radial-gradient(circle at 50% 35%, rgba(106, 89, 229, 0.18), transparent 42%),
-                var(--bg-primary);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.78) contrast(1.08);
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(to top, var(--bg-primary) 0%, transparent 15%),
-                linear-gradient(to bottom, var(--bg-primary) 0%, transparent 15%),
-                linear-gradient(to right, var(--bg-primary) 0%, transparent 10%),
-                linear-gradient(to left, var(--bg-primary) 0%, transparent 10%);
+                linear-gradient(to top, var(--bg-primary) 0%, rgba(10, 10, 11, 0.04) 22%, rgba(10, 10, 11, 0.12) 100%),
+                radial-gradient(circle at center, transparent 30%, rgba(10, 10, 11, 0.28) 100%);
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            background: rgba(10, 10, 11, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(10, 10, 11, 0.58);
+            backdrop-filter: blur(6px) brightness(0.68);
+            -webkit-backdrop-filter: blur(6px) brightness(0.68);
             padding: 3rem 4rem;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 700px;
-            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            max-width: 760px;
+            width: min(92vw, 760px);
             text-align: center;
         }
 
@@ -253,17 +260,18 @@
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
         }
 
         .hero-content p {
             font-size: 1.125rem;
-            color: var(--text-secondary);
+            color: rgba(239, 239, 229, 0.78);
             line-height: 1.8;
             margin-bottom: 1rem;
+        }
+
+        .hero .article-date {
+            color: rgba(239, 239, 229, 0.62);
         }
 
         .hero-content p:last-of-type {
@@ -277,22 +285,6 @@
             padding: 4rem 2rem;
             position: relative;
             z-index: 10;
-        }
-
-        .post-image-bleed {
-            width: min(1200px, 100vw);
-            margin: 0 0 4rem 50%;
-            transform: translateX(-50%);
-            overflow: hidden;
-            border-radius: 18px;
-            border: 1px solid var(--border-color);
-            background: #fff;
-        }
-
-        .post-image-bleed img {
-            display: block;
-            width: 100%;
-            height: auto;
         }
 
         .article-meta {
@@ -767,7 +759,6 @@
             .hero-content { padding: 1.5rem 1.25rem; }
             .hero-content h1 { font-size: 1.5rem; }
             .article-container { padding: 2rem 0.875rem; }
-            .post-image-bleed { border-left: 0; border-right: 0; border-radius: 0; }
             .scripture-block { padding: 1.25rem; }
             .sermon-point { padding: 1.25rem; }
             .application-section { padding: 1.5rem; }
@@ -821,6 +812,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg">
+            <img src="../images/john-9-christian-rorschach-test.jpeg" alt="A black and white Rorschach inkblot">
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content fade-in">
             <div class="hero-meta">
@@ -836,10 +830,6 @@
 
         <!-- Article Content -->
         <div class="article-content fade-in fade-in-delay-1">
-
-            <figure class="post-image-bleed">
-                <img src="../images/john-9-christian-rorschach-test.jpeg" alt="A black and white Rorschach inkblot">
-            </figure>
 
             <div class="series-info">
                 <h4>That You May Believe: The Writings of John</h4>
