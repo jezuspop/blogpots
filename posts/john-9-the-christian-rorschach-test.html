@@ -623,6 +623,129 @@
             padding-bottom: 0;
         }
 
+        /* Long-form Study Layout */
+        .study-panel {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .study-panel h3,
+        .study-panel h4 {
+            margin-top: 0;
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--accent-teal);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .insight-grid,
+        .comparison-grid,
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .insight-card,
+        .comparison-card,
+        .practice-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+        }
+
+        .insight-card h4,
+        .comparison-card h4,
+        .practice-card h4 {
+            margin: 0 0 0.65rem;
+            color: var(--text-primary);
+            font-size: 1.02rem;
+        }
+
+        .insight-card p,
+        .comparison-card p,
+        .practice-card p {
+            margin: 0;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .practice-card:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .label-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin: 1.25rem 0 0;
+        }
+
+        .label-chip {
+            padding: 0.55rem 0.8rem;
+            color: var(--text-primary);
+            background: rgba(106, 89, 229, 0.12);
+            border: 1px solid rgba(106, 89, 229, 0.25);
+            border-radius: 999px;
+            font-size: 0.84rem;
+            line-height: 1.3;
+        }
+
+        .story-path {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            margin: 2rem 0;
+            overflow: hidden;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .story-step {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+        }
+
+        .story-step span {
+            display: block;
+            margin-bottom: 0.55rem;
+            color: var(--accent-purple);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .story-step p {
+            margin: 0;
+            font-size: 0.94rem;
+            line-height: 1.65;
+        }
+
+        .takeaway-banner {
+            margin: 2rem 0;
+            padding: 1.5rem 1.75rem;
+            background: linear-gradient(135deg, rgba(60, 229, 192, 0.1), rgba(106, 89, 229, 0.1));
+            border: 1px solid rgba(60, 229, 192, 0.2);
+            border-radius: 14px;
+            color: var(--text-primary);
+            font-size: 1.08rem;
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
         /* Footer */
         footer {
             margin-top: 5rem;
@@ -752,6 +875,11 @@
             .article-content h2 { font-size: 1.5rem; }
             .scripture-block { padding: 1.5rem; }
             .sermon-point { padding: 1.5rem; }
+            .insight-grid,
+            .comparison-grid,
+            .practice-grid { grid-template-columns: 1fr; }
+            .practice-card:last-child { grid-column: auto; }
+            .story-path { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; gap: 1.25rem; }
         }
 
@@ -762,6 +890,11 @@
             .scripture-block { padding: 1.25rem; }
             .sermon-point { padding: 1.25rem; }
             .application-section { padding: 1.5rem; }
+            .study-panel,
+            .insight-card,
+            .comparison-card,
+            .practice-card,
+            .story-step { padding: 1.25rem; }
         }
 
         /* Animations */
@@ -831,52 +964,31 @@
         <!-- Article Content -->
         <div class="article-content fade-in fade-in-delay-1">
 
-            <h2 id="series-introduction">Series Introduction</h2>
-            <p><strong>We continue our series of the year: That you may believe</strong></p>
-            <ul>
-            <li>This series is focused on the writings and life of the apostle John</li>
-            <li>Showing his walk with Jesus throughout his life</li>
-            <li>From the gospel to Revelation</li>
-            </ul>
-            <p><strong>Here are the notes if you want to follow along</strong></p>
-            <h2 id="opening">Opening</h2>
-            <p><strong>John 8 closed with a dramatic scene</strong></p>
-            <ul>
-            <li>Jesus declaring "Before Abraham was, I AM" and the crowd picking up stones to kill him.</li>
-            <li>He slipped away from the temple. John 9 opens immediately after: <em>"As he went along, he saw a man blind from birth."</em></li>
-            <li>Jesus walks out of a near-execution and straight into a healing.</li>
-            <li>The contrast is intentional; he moves from those who wanted to snuff out the light to a man who had never seen it.</li>
-            <li>The setting is still Jerusalem, likely still near the Temple Mount in the aftermath of the Feast of Tabernacles (ch. 7–8).</li>
-            </ul>
-            <h2 id="big-idea">Big Idea:</h2>
-            <h3 id="is-our-perception-true-reality">Is our perception true reality?</h3>
-            <p><strong>What if your biggest blind spot isn’t what you don’t know, but what you think you already know?</strong></p>
-            <h3 id="the-rorschach-test">The Rorschach Test...</h3>
-            <p>A psychological test where people look at the same inkblot but see different images based on what they’re carrying internally: their experiences, assumptions, and expectations.</p>
-            <hr />
-            <h3 id="the-christian-rorschach">The Christian Rorschach</h3>
-            <p>How we perceive Jesus determines whether we see Him clearly: or miss Him entirely. In John 9, we get a theological version of this. One miracle and four different groups respond in four completely different ways:</p>
-            <h3 id="key-thoughts">Key Thoughts</h3>
-            <ul>
-            <li><strong>The Disciples</strong>: Religiously Conditioned
-            <ul>
-            <li>Can’t see past their tradition</li>
-            </ul></li>
-            <li><strong>The Neighbors</strong>: Skeptically Stuck
-            <ul>
-            <li>Can't see past their opinions</li>
-            </ul></li>
-            <li><strong>The Pharisees</strong>: Proudly Resistant
-            <ul>
-            <li>Can’t see past their system</li>
-            </ul></li>
-            <li><strong>The Parents</strong>: Fearfully Reactionary
-            <ul>
-            <li>Can’t see past their social status</li>
-            </ul></li>
-            </ul>
-            <p><strong>John's deeper irony:</strong> The man who was physically blind is the only one in the chapter who ends up truly <em>seeing</em>: while the people with perfect eyesight are declared spiritually blind (v. 41).</p>
-            <hr />
+            <div class="series-info">
+                <h4>That You May Believe: The Writings of John</h4>
+                <ul>
+                    <li><strong>Big Idea:</strong> Is our perception true reality?</li>
+                    <li><strong>John 9:</strong> One miracle produces four very different responses.</li>
+                    <li><strong>John's Irony:</strong> The man born blind is the only person who ends up truly seeing.</li>
+                </ul>
+            </div>
+
+            <p>John 8 closes with Jesus declaring, "Before Abraham was, I am," and a crowd reaching for stones. John 9 opens as he leaves that near-execution and sees a man who has been blind from birth. Jesus moves from people trying to extinguish the Light to a man who has never seen it.</p>
+
+            <h2>Is Our Perception True Reality?</h2>
+
+            <p><strong>What if your biggest blind spot is not what you do not know, but what you think you already know?</strong></p>
+
+            <p>A Rorschach test gives several people the same image and receives different interpretations. John 9 gives us a theological version: one miracle, four groups, and four reactions shaped by what each group was already carrying.</p>
+
+            <div class="insight-grid">
+                <div class="insight-card"><h4>The Disciples</h4><p>Religiously conditioned. They cannot see past their tradition.</p></div>
+                <div class="insight-card"><h4>The Neighbors</h4><p>Skeptically stuck. They cannot see past their opinions.</p></div>
+                <div class="insight-card"><h4>The Pharisees</h4><p>Proudly resistant. They cannot see past their system.</p></div>
+                <div class="insight-card"><h4>The Parents</h4><p>Fearfully reactionary. They cannot see past the social cost.</p></div>
+            </div>
+
+            <div class="takeaway-banner">The man who begins the chapter physically blind is the only person who ends up truly seeing, while those with perfect eyesight are exposed as spiritually blind.</div>
             <div class="sermon-point">
               <div class="point-header">
                 <div class="point-number">1</div>
@@ -889,49 +1001,38 @@
               <cite>John 9:1-7 (NIV)</cite>
             </div>
 
-            <h3 id="cultural-historical-background">Cultural-Historical Background</h3>
-            <ul>
-            <li>The disciples' question was theologically mainstream, not malicious.
-            <ul>
-            <li>Second Temple Judaism operated with a deep assumption connecting suffering and sin (rooted in Deuteronomy 28's covenant blessings/curses)</li>
-            <li>Reinforced in texts like Job's counselors.</li>
-            </ul></li>
-            <li>The disciples didn't arrive at this question through personal cruelty or intellectual laziness.
-            <ul>
-            <li>Their Jewish traditions <em>pre-loaded</em> the question.</li>
-            <li>They had been taught since childhood that covenant faithfulness produces blessing and covenant failure produces suffering.</li>
-            </ul></li>
-            <li>A blind man begging by the road fit the grid perfectly.</li>
-            <li>The critical distinction from the Pharisees later in the chapter is this:
-            <ul>
-            <li>The disciples' conditioning was <em>innocent</em>.</li>
-            <li>The Pharisees had the same cultural background but had since hardened into a self-protecting institution.</li>
-            <li>Same starting point: very different destinations.</li>
-            </ul></li>
-            <li>One group was willing to be corrected; the other was not.</li>
-            </ul>
-            <h3 id="main-takeaways">Main Takeaways</h3>
-            <ul>
-            <li>Jesus reframes suffering: this man's blindness is not a verdict from his past life
-            <ul>
-            <li>It is an opportunity to see God work</li>
-            <li>I can still fall into this with what I see in the world</li>
-            <li>There is truth that our sin has consequences but I can't be quick to judge</li>
-            <li>I can't read God's mind</li>
-            <li>Isaiah 40 says God's ways are not mine</li>
-            </ul></li>
-            <li>The disciples weren't asking out of pride; they were responding out of <em>tradition</em>.</li>
-            <li>The danger of religious tradition isn't that it makes you bad; it's that it makes you blind while feeling secure.</li>
-            </ul>
-            <h3 id="questions-to-consider">Questions to Consider</h3>
-            <ul>
-            <li>Where might your assumptions be causing you to miss what God is showing you?
-            <ul>
-            <li>What religious assumptions did your upbringing pass on to you that you’ve never actually examined against Scripture?</li>
-            <li>Are you asking a blame question where Jesus is inviting a purpose question?</li>
-            </ul></li>
-            </ul>
-            <hr />
+            <div class="study-panel">
+                <span class="section-label">Why They Asked</span>
+                <h3>A Question Their Tradition Had Already Answered</h3>
+                <p>The disciples were not being malicious or intellectually lazy. Their question was theologically mainstream. Second Temple Judaism carried a deep assumption, rooted in Deuteronomy 28 and reinforced by voices like Job's counselors, that suffering could be traced directly to sin.</p>
+                <p>They had been taught since childhood that covenant faithfulness produced blessing and covenant failure produced suffering. A blind man begging by the road fit that grid perfectly, so their tradition <em>pre-loaded</em> the question before they ever met him.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>The Disciples</h4>
+                    <p>Their conditioning was inherited, and they remained willing to let Jesus correct it.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>The Pharisees</h4>
+                    <p>They began with the same cultural background but hardened it into a self-protecting institution.</p>
+                </div>
+            </div>
+
+            <div class="takeaway-banner">Same starting point, very different destinations. One group was willing to be corrected; the other was not.</div>
+
+            <p>Jesus reframes the man's suffering. His blindness is not a verdict on his past; it is an opportunity for the works of God to be displayed. Sin has real consequences, but that truth does not give us permission to read God's mind or rush to judgment. Isaiah 40 reminds us that God's ways are not ours.</p>
+
+            <p>The danger of religious tradition is not simply that it can make people bad. It can make us blind while leaving us feeling secure.</p>
+
+            <div class="application-section">
+                <h3 class="application-title">Questions to Consider</h3>
+                <ol class="numbered-questions">
+                    <li>Where might your assumptions be causing you to miss what God is showing you?</li>
+                    <li>What religious assumptions did your upbringing give you that you have never examined against Scripture?</li>
+                    <li>Are you asking a blame question where Jesus is inviting a purpose question?</li>
+                </ol>
+            </div>
             <div class="sermon-point">
               <div class="point-header">
                 <div class="point-number">2</div>
@@ -944,65 +1045,56 @@
               <cite>John 9:8-12 (NIV)</cite>
             </div>
 
-            <h3 id="cultural-historical-background-1">Cultural-Historical Background</h3>
-            <ul>
-            <li>The neighbors' doubt wasn't irrational
-            <ul>
-            <li>In the ancient world, miraculous healings were not daily events,</li>
-            <li>The man known for years as a blind beggar suddenly claiming his sight would naturally produce unbelief.</li>
-            <li>Identity in the ancient world was tightly tied to <em>social role</em> and <em>community recognition</em>.</li>
-            </ul></li>
-            <li>To the neighbors, this man was always "the blind beggar."
-            <ul>
-            <li>In their minds, he couldn’t become anything more.</li>
-            <li>He was so well-known in the community that his condition had become his identity (v. 8)</li>
-            </ul></li>
-            <li>In Scripture, people were often reduced to labels rather than known by name:
-            <ul>
-            <li>Samaritan Woman (John 4)</li>
-            <li>The Invalid (John 5)</li>
-            <li>Bleeding Woman (Matthew 9)</li>
-            <li>The Demoniac (Mark 5)</li>
-            <li>The Paralytic (Mark 2)</li>
-            <li>The Leper (Luke 5)</li>
-            <li>The Sinful Woman (Luke 7)</li>
-            <li>The Ethiopian Eunuch (Acts 8)</li>
-            <li>The Canaanite/Syrophoenician Woman (Matthew 15)</li>
-            </ul></li>
-            </ul>
-            <h3 id="main-takeaways-1">Main Takeaways</h3>
-            <ul>
-            <li>The neighbors couldn't believe the man could change.
-            <ul>
-            <li>This is what happens when we reduce people to their worst selves or chronic struggles.</li>
-            <li>When that identity disappeared, some neighbors found it genuinely easier to believe it was a lookalike than to accept this man could change!</li>
-            <li>Familiarity can blind us from believing transformation is possible</li>
-            </ul></li>
-            <li><strong>The man's answer: "I am the man."</strong> This is the first moment of testimony in the chapter.
-            <ul>
-            <li>He isn't a follower yet</li>
-            <li>He doesn't really know who Jesus is! (v25)</li>
-            <li>But he knows what happened to him.</li>
-            </ul></li>
-            <li>God is in the business of transforming people
-            <ul>
-            <li>Moses</li>
-            <li>Gideon</li>
-            <li>Samson</li>
-            <li>Naomi</li>
-            <li>The Samaritan Woman</li>
-            <li>Peter</li>
-            <li>Martha</li>
-            <li>Paul</li>
-            </ul></li>
-            </ul>
-            <h3 id="questions-to-consider-1">Questions to Consider</h3>
-            <ul>
-            <li>Have you quietly started believing certain people can’t change?
-            <ul>
-            <li>Do you live like God can change the most cynical people?</li>
-            </ul></li>
-            </ul>
+            <div class="study-panel">
+                <span class="section-label">Why They Doubted</span>
+                <h3>His Condition Had Become His Identity</h3>
+                <p>The neighbors' doubt was not irrational. Miraculous healings were not daily events, and a man known for years as a blind beggar was suddenly claiming that he could see. In the ancient world, identity was tightly connected to social role and community recognition. To them, he had always been <em>the blind beggar</em>.</p>
+                <p>He was so familiar that his condition had become his name. When the condition disappeared, some found it easier to believe he was a lookalike than to accept that the man they knew could become something more.</p>
+            </div>
+
+            <div class="study-panel">
+                <span class="section-label">The Power of a Label</span>
+                <h3>Known by the Struggle, Not the Name</h3>
+                <p>Scripture repeatedly introduces people by the condition, reputation, ethnicity, or social role others used to define them:</p>
+                <div class="label-cloud">
+                    <span class="label-chip">Samaritan Woman · John 4</span>
+                    <span class="label-chip">The Invalid · John 5</span>
+                    <span class="label-chip">Bleeding Woman · Matthew 9</span>
+                    <span class="label-chip">The Demoniac · Mark 5</span>
+                    <span class="label-chip">The Paralytic · Mark 2</span>
+                    <span class="label-chip">The Leper · Luke 5</span>
+                    <span class="label-chip">The Sinful Woman · Luke 7</span>
+                    <span class="label-chip">The Ethiopian Eunuch · Acts 8</span>
+                    <span class="label-chip">The Canaanite Woman · Matthew 15</span>
+                </div>
+            </div>
+
+            <p>This is what happens when we reduce people to their worst selves or chronic struggles. Familiarity can blind us to the possibility of transformation. The neighbors knew his history so well that they could no longer imagine his future.</p>
+
+            <div class="story-path">
+                <div class="story-step"><span>What He Is Not</span><p>He is not yet a follower of Jesus.</p></div>
+                <div class="story-step"><span>What He Does Not Know</span><p>He cannot yet fully explain who Jesus is.</p></div>
+                <div class="story-step"><span>What He Knows</span><p><strong>“I am the man.”</strong> He knows what happened to him.</p></div>
+            </div>
+
+            <div class="takeaway-banner">This is the first testimony in the chapter. He does not have a complete theology yet, but he has an undeniable transformation.</div>
+
+            <div class="study-panel">
+                <span class="section-label">A God Who Transforms</span>
+                <h3>Change Is a Pattern Throughout Scripture</h3>
+                <p>Moses, Gideon, Samson, Naomi, the Samaritan woman, Peter, Martha, and Paul all remind us that God does not freeze people at the worst, weakest, or most familiar chapter of their story. God is in the business of transforming people.</p>
+                <div class="label-cloud">
+                    <span class="label-chip">Moses</span><span class="label-chip">Gideon</span><span class="label-chip">Samson</span><span class="label-chip">Naomi</span><span class="label-chip">The Samaritan Woman</span><span class="label-chip">Peter</span><span class="label-chip">Martha</span><span class="label-chip">Paul</span>
+                </div>
+            </div>
+
+            <div class="application-section">
+                <h3 class="application-title">Questions to Consider</h3>
+                <ol class="numbered-questions">
+                    <li>Have you quietly started believing certain people cannot change?</li>
+                    <li>Do you live like God can change even the most cynical person?</li>
+                </ol>
+            </div>
             <div class="sermon-point">
               <div class="point-header">
                 <div class="point-number">3</div>
@@ -1015,59 +1107,55 @@
               <cite>John 9:13–18 (NIV)</cite>
             </div>
 
-            <h3 id="cultural-historical-background-2">Cultural-Historical Background</h3>
-            <ul>
-            <li>Healing on the Sabbath emerged as a contentious issue during the first century CE
-            <ul>
-            <li>Creating genuine interpretive tension within Jewish law and practice.</li>
-            <li>The Torah did not contain any explicit exemption for medical treatment, activities like washing, preparing medicines, and anointing patients risked violating Sabbath prohibitions against work.</li>
-            </ul></li>
-            <li>The core disagreement centered on whether life-preservation could override Sabbath restrictions.
-            <ul>
-            <li>Mattathias (Maccabean Revolt) took an initial step toward this principle by permitting armed defense on the Sabbath during attacks, but whether this priority extended to healing remained uncertain.</li>
-            </ul></li>
-            <li><strong>The division in v. 16</strong> is significant:
-            <ul>
-            <li>Not all Pharisees were uniformly hostile.</li>
-            <li>John notes that <em>some</em> asked the right question "How can a sinner perform such signs?"</li>
-            <li>But the hardliners prevailed. Institutional pressure and majority consensus silenced the honest inquirers.</li>
-            </ul></li>
-            </ul>
-            <h3 id="main-takeaways-2">Main Takeaways</h3>
-            <ul>
-            <li><strong>The Pharisees were blinded by pride</strong>
-            <ul>
-            <li>It wasn't merely intellectual; it was <em>positional</em> .
-            <ul>
-            <li>They understood what was happening</li>
-            </ul></li>
-            <li>A Galilean carpenter healing on the Sabbath without their sanction was not just a theological disagreement</li>
-            <li>It was a threat to their system.</li>
-            <li>They were the authorized interpreters of Israel's spirituality.</li>
-            </ul></li>
-            <li><strong>Similar struggle as the disciples, however, hardened into something else.</strong>
-            <ul>
-            <li>The Pharisees came from the same Jewish religious tradition as the disciples.</li>
-            <li>The difference is what happened to that conditioning over time.</li>
-            <li>The disciples were willing to be shaped by Jesus</li>
-            <li>The Pharisees had taken their traditions and built an entire system of power around it.</li>
-            </ul></li>
-            <li>Religion that is unwilling to be corrected by Jesus will eventually begin resisting Jesus in the name of religion.
-            <ul>
-            <li>The Sabbath issue becomes a filter that allows them to dismiss God's power.</li>
-            <li>The Pharisees asked controlling questions, not kingdom questions
-            <ul>
-            <li>Control: Who approved this?</li>
-            <li>Kingdom: Is God at work here?</li>
-            </ul></li>
-            </ul></li>
-            </ul>
-            <h3 id="questions-to-consider-2">Questions to Consider</h3>
-            <ul>
-            <li>Would you rather have truth, or just be right?</li>
-            <li>Have my convictions remained biblical while my posture became unteachable?</li>
-            </ul>
-            <hr />
+            <div class="study-panel">
+                <span class="section-label">The Sabbath Tension</span>
+                <h3>A Real Debate Became a Convenient Filter</h3>
+                <p>Healing on the Sabbath was a genuine interpretive tension in first-century Jewish life. The Torah contained no explicit medical exemption, and actions such as washing, preparing medicine, or anointing a patient could be classified as work.</p>
+                <p>The deeper question was whether preserving life could override Sabbath restrictions. During the Maccabean Revolt, Mattathias permitted armed defense on the Sabbath after Jews were attacked without resisting, but whether the same priority extended to healing remained unsettled.</p>
+            </div>
+
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>An Honest Question Survived</h4>
+                    <p>Not every Pharisee was uniformly hostile. Some asked, “How can a sinner perform such signs?” John preserves their division because the evidence was strong enough to disturb the party line.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Institutional Pressure Won</h4>
+                    <p>The hardliners prevailed. Majority consensus and institutional pressure silenced those willing to follow the evidence.</p>
+                </div>
+            </div>
+
+            <p>Their blindness was not merely intellectual. It was <em>positional</em>. A Galilean carpenter healing on the Sabbath without their approval threatened the system that made them Israel's authorized spiritual interpreters. They understood what was happening, but accepting it would cost them control.</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>The Disciples</h4>
+                    <p>Shared the same religious tradition, but remained willing to be reshaped by Jesus.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>The Pharisees</h4>
+                    <p>Built a system of power around that tradition and treated correction as a threat.</p>
+                </div>
+            </div>
+
+            <div class="quote-block">
+                <p>Religion that is unwilling to be corrected by Jesus will eventually begin resisting Jesus in the name of religion.</p>
+            </div>
+
+            <div class="story-path">
+                <div class="story-step"><span>The Filter</span><p>The Sabbath issue lets them dismiss the power of God in front of them.</p></div>
+                <div class="story-step"><span>The Control Question</span><p>Who approved this?</p></div>
+                <div class="story-step"><span>The Kingdom Question</span><p>Is God at work here?</p></div>
+            </div>
+
+            <div class="application-section">
+                <h3 class="application-title">Questions to Consider</h3>
+                <ol class="numbered-questions">
+                    <li>Would you rather have truth, or simply be right?</li>
+                    <li>Have your convictions remained biblical while your posture has become unteachable?</li>
+                    <li>Are you asking controlling questions, or looking for where God is at work?</li>
+                </ol>
+            </div>
             <div class="sermon-point">
               <div class="point-header">
                 <div class="point-number">4</div>
@@ -1080,75 +1168,78 @@
               <cite>John 9:19–23 (NIV)</cite>
             </div>
 
-            <h3 id="cultural-historical-background-3">Cultural-Historical Background</h3>
-            <ul>
-            <li>Synagogue expulsion was devastating in the ancient world.
-            <ul>
-            <li>The synagogue was not merely a religious building, it was the center of social, economic, and communal life.</li>
-            <li>To be expelled was to lose your social network, your reputation, your livelihood in many cases, and your community identity.</li>
-            <li>For parents with a disabled son who was already a community liability, the threat was real.</li>
-            </ul></li>
-            </ul>
-            <h3 id="main-takeaways-3">Main Takeaways</h3>
-            <ul>
-            <li>The parents know the truth but act out of fear
-            <ul>
-            <li>They don't disbelieve their son.</li>
-            <li>They've weighed the evidence and chosen personal security over public testimony.</li>
-            </ul></li>
-            <li><strong>Fear of social cost is the most underrated enemy of faith in Scripture.</strong>
-            <ul>
-            <li>The Pharisees are the dramatic villains, but the parents are the most <em>relatable</em> characters in this story.</li>
-            <li>Most of us don't lose our faith to intellectual arguments; we lose our nerve to social pressure.</li>
-            <li><em>What will people think? What will it cost me?</em></li>
-            <li><strong>Fear didn’t erase their facts: it silenced their faith.</strong></li>
-            <li>And it led to a tragic result</li>
-            </ul></li>
-            <li>Ultimate Tragedy: They abandon their son.
-            <ul>
-            <li>The man who was healed had no family advocate in his trial.</li>
-            <li>The Pharisees hauled him in, interrogated him twice, and threw him out</li>
-            <li>And it was his parents who handed him over.</li>
-            </ul></li>
-            </ul>
-            <h3 id="the-turn">The Turn</h3>
-            <p>When people are pushed out by the world, Jesus does not abandon them: He pursues them.</p>
-            <hr />
-            <h3 id="the-contrast-the-healed-man">The Contrast: The Healed Man</h3>
+            <div class="study-panel">
+                <span class="section-label">The Cost of Expulsion</span>
+                <h3>More Than Losing a Place of Worship</h3>
+                <p>Synagogue expulsion could devastate a family. The synagogue stood at the center of social, economic, and communal life. To be expelled could mean losing a social network, reputation, livelihood, and community identity. For parents whose disabled son had already been treated as a community liability, the threat was real.</p>
+            </div>
+
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>They Knew the Facts</h4>
+                    <p>They did not disbelieve their son. They knew he was their child, knew he had been born blind, and knew he could now see.</p>
+                </div>
+                <div class="insight-card">
+                    <h4>They Chose Security</h4>
+                    <p>They weighed the evidence and chose personal safety over public testimony: “He is of age; ask him.”</p>
+                </div>
+            </div>
+
+            <p>Fear of social cost is one of Scripture's most underestimated enemies of faith. The Pharisees are the dramatic villains, but the parents are the most relatable people in the story. Most of us do not lose our faith to an intellectual argument. We lose our nerve to social pressure: <em>What will people think? What will this cost me?</em></p>
+
+            <div class="takeaway-banner">Fear did not erase their facts. It silenced their faith.</div>
+
+            <div class="study-panel">
+                <span class="section-label">The Ultimate Tragedy</span>
+                <h3>They Abandoned Their Son</h3>
+                <p>The healed man had no family advocate in his trial. The Pharisees brought him in, interrogated him twice, and threw him out. His parents protected themselves by handing the responsibility back to the son who needed them to stand beside him.</p>
+            </div>
+
+            <div class="quote-block">
+                <p>When people are pushed out by the world, Jesus does not abandon them. He pursues them.</p>
+            </div>
+
+            <h2 id="the-contrast-the-healed-man">The Contrast: The Healed Man</h2>
             <div class="scripture-block">
               <p>Jesus heard that they had thrown him out, and when he found him, he said, “Do you believe in the Son of Man?” [36] “Who is he, sir?” the man asked. “Tell me so that I may believe in him.” [37] Jesus said, “You have now seen him; in fact, he is the one speaking with you.” [38] Then the man said, “Lord, I believe,” and he worshiped him. [39] Jesus said, “For judgment I have come into this world, so that the blind will see and those who see will become blind.”</p>
               <cite>John 9:35-39 (NIV)</cite>
             </div>
 
-            <h3 id="the-only-clear-picture-we-have">The Only Clear Picture We Have</h3>
-            <p>He was the only one who could really see</p>
+            <h3 id="the-only-clear-picture-we-have">The Only Clear Picture</h3>
+            <p>The man born blind is the only person in the chapter who learns to see clearly.</p>
             <div class="quote-block">
-              <p>&quot;Lord, I believe,&quot; and he worshiped him. (v38)</p>
+              <p>“Lord, I believe,” and he worshiped him. (v. 38)</p>
             </div>
 
-            <h3 id="it-came-at-a-cost">It Came At A Cost</h3>
-            <ul>
-            <li>He lost his community.</li>
-            <li>He lost his parents' public support.</li>
-            <li>He was cast out of the only religious institution his world had.</li>
-            <li>And Jesus <em>came looking for him</em>.</li>
-            </ul>
+            <div class="insight-grid">
+                <div class="insight-card"><h4>He Lost His Community</h4><p>The people who had known him longest could not accept what had happened.</p></div>
+                <div class="insight-card"><h4>He Lost Public Support</h4><p>His parents confirmed the facts but refused to stand with him.</p></div>
+                <div class="insight-card"><h4>He Lost His Institution</h4><p>He was cast out of the only religious community his world had.</p></div>
+                <div class="insight-card"><h4>Jesus Came Looking</h4><p>The moment the world pushed him out, Jesus pursued him personally.</p></div>
+            </div>
+
             <p>The one who paid the highest social price is the one who received the highest gift: the personal revelation of Jesus' full identity, and the grace to worship.</p>
-            <h2 id="conclusion">Conclusion</h2>
-            <h3 id="1-diagnose-your-lens">1) Diagnose your lens</h3>
-            <p>Ask: <em>What is shaping how I read this moment: Scripture, tradition, fear, pride, or pain?</em></p>
-            <h3 id="2-move-from-blame-to-purpose">2) Move from blame to purpose</h3>
-            <p>When suffering appears, don’t start with “Whose fault?” Start with: <em>How might the works of God be displayed here?</em></p>
-            <h3 id="3-hold-your-beliefs-with-humility">3) Hold your beliefs with humility</h3>
-            <p>Strong convictions are good; religious pride is dangerous. If Jesus cannot correct us, we are not following Him</p>
-            <h3 id="4-share-your-testimony">4) Share your testimony</h3>
-            <p>Like the healed man: “One thing I do know: I was blind, now I see.” You may not be great at defending your faith, but you can share your transformation.</p>
-            <h3 id="5-choose-costly-faith-over-safe-silence">5) Choose costly faith over safe silence</h3>
-            <p>When fear tempts you to stay quiet, choose to stand</p>
-            <hr />
-            <h2 id="final-thought">Final Thought</h2>
-            <p>Everyone in John 9 saw the same miracle, but not everyone saw Jesus.</p>
-            <h3 id="do-you-see-jesus">Do you see Jesus?</h3>
+
+            <h2 id="conclusion">How to Clear the Picture</h2>
+
+            <div class="practice-grid">
+                <div class="practice-card"><h4>1. Diagnose Your Lens</h4><p>Ask what is shaping how you read this moment: Scripture, tradition, fear, pride, or pain?</p></div>
+                <div class="practice-card"><h4>2. Move From Blame to Purpose</h4><p>When suffering appears, ask how the works of God might be displayed rather than beginning with whose fault it is.</p></div>
+                <div class="practice-card"><h4>3. Hold Beliefs With Humility</h4><p>Strong convictions are good. Religious pride is dangerous. If Jesus cannot correct us, we are not following him.</p></div>
+                <div class="practice-card"><h4>4. Share Your Testimony</h4><p>You may not be able to answer every objection, but you can say, “One thing I do know. I was blind, but now I see.”</p></div>
+                <div class="practice-card"><h4>5. Choose Costly Faith</h4><p>When fear tempts you toward safe silence, choose to stand. Jesus is worth the social cost.</p></div>
+            </div>
+
+            <div class="application-section">
+                <h3 class="application-title">Final Questions</h3>
+                <ol class="numbered-questions">
+                    <li>What assumptions might be distorting how you see Jesus?</li>
+                    <li>Where has fear made you silent about what you know is true?</li>
+                    <li>What would it look like to choose truth over comfort this week?</li>
+                </ol>
+            </div>
+
+            <div class="takeaway-banner">Everyone in John 9 saw the same miracle, but not everyone saw Jesus. Do you see Jesus?</div>
 
         </div>
     </article>
