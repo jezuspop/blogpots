@@ -608,8 +608,10 @@
         .fade-in-delay-1 { animation-delay: 0.1s; }
         .fade-in-delay-2 { animation-delay: 0.2s; }
     </style>
+    <link rel="stylesheet" href="../assets/article-reading.css">
 </head>
-<body>
+<body class="article-page">
+    <div id="article-top" tabindex="-1"></div>
 
     <div class="progress-bar" id="progressBar"></div>
 
@@ -658,7 +660,7 @@
 
     <article class="article-container">
 
-        <div class="article-content fade-in fade-in-delay-1">
+        <div class="article-content article-content--discussion fade-in fade-in-delay-1">
 
             <div class="opening-question">
                 <h3>Short Story</h3>
@@ -731,8 +733,10 @@
         </div>
     </footer>
 
-    <a href="../posts.html" class="back-to-posts" title="Back to all posts">←</a>
-    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+    <div class="article-actions" role="navigation" aria-label="Article actions">
+        <a href="../posts.html">Back to Posts</a>
+        <a id="backToTop" href="#article-top">Back to Top</a>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -769,21 +773,6 @@
             );
 
             progressBar.style.width = progress + '%';
-        });
-
-        // Back to top button
-        const backToTop = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>

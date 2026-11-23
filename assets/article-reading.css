@@ -1,0 +1,154 @@
+/* Shared reading system for registered Bible Studies and Discussion Group posts. */
+.article-content {
+    --reading-text: #c2bfcb;
+    --reading-heading: #efefe5;
+    --reading-muted: #aba6b9;
+    --reading-lavender: #cfacfb;
+    --reading-border: #40394c;
+    --reading-panel: #17151c;
+    --reading-wash: linear-gradient(135deg, #211b32, #23182a);
+    --reading-badge: linear-gradient(135deg, #b6a4ff, #f3a5e6);
+    --reading-space: clamp(1rem, 3.5vw, 2rem);
+    font: 400 clamp(1rem, .96rem + .2vw, 1.125rem)/1.8 Poppins, sans-serif;
+    color: var(--reading-text);
+    overflow-wrap: anywhere;
+}
+
+.article-content--discussion {
+    --reading-space: clamp(1rem, 3vw, 1.5rem);
+}
+
+.article-content :is(h2, h3, h4) {
+    color: var(--reading-heading);
+    font-family: Poppins, sans-serif;
+    line-height: 1.35;
+}
+.article-content h2 {
+    font-size: clamp(1.42rem, 1.18rem + 1vw, 1.8rem);
+    font-weight: 700;
+    margin: 2.5em 0 .7em;
+}
+.article-content h3 {
+    font-size: clamp(1.15rem, 1.04rem + .5vw, 1.4rem);
+    font-weight: 650;
+    margin: 1.8em 0 .6em;
+}
+.article-content h4 {
+    color: var(--reading-lavender);
+    font-size: 1rem;
+    font-weight: 650;
+    margin: 1.5em 0 .55em;
+}
+.article-content strong { color: var(--reading-heading); }
+.article-content em { color: var(--reading-lavender); }
+
+.article-content :is(ul, ol) {
+    margin-block: .85em 1.15em;
+    padding-inline-start: 1.45em;
+}
+.article-content li { margin-block-end: .48em; }
+.article-content li > :is(ul, ol) { margin-block: .35em .55em; }
+.article-content li::marker { color: var(--reading-lavender); }
+.article-content :is(.series-info ul, .application-list, .numbered-questions) {
+    padding-inline-start: 0;
+    list-style: none;
+}
+.article-content hr {
+    border: 0;
+    border-block-start: 1px solid var(--reading-border);
+    margin-block: 2rem;
+}
+
+.article-content :is(.scripture-block, .sermon-point, .series-info, .discussion-question,
+    .opening-question, .quote-block, .application-section, .highlight-box, .resources-section) {
+    border: 1px solid var(--reading-border);
+    border-radius: .9rem;
+    background: var(--reading-panel);
+    padding: var(--reading-space);
+    color: var(--reading-text);
+}
+
+.article-content :is(.opening-question, .quote-block, .application-section) {
+    background: var(--reading-wash);
+}
+.article-content :is(.scripture-block, .discussion-question) {
+    border-inline-start: .25rem solid var(--reading-lavender);
+}
+.article-content .scripture-block p {
+    font: italic 500 1.04em/1.75 Poppins, sans-serif;
+    color: var(--reading-heading);
+}
+.article-content :is(.scripture-block, .quote-block) cite {
+    display: block;
+    color: var(--reading-lavender);
+    font: normal 550 .9em/1.45 Poppins, sans-serif;
+}
+.article-content :is(.opening-question, .discussion-question, .application-section, .point-content) p {
+    color: var(--reading-text);
+}
+.article-content :is(.series-info, .application-list, .numbered-questions) li {
+    color: var(--reading-text);
+}
+.article-content :is(.opening-question, .application-section, .point-header, .series-info,
+    .highlight-box, .resources-section) > :is(h2, h3, h4):first-child {
+    margin-block-start: 0;
+}
+.article-content .point-header .point-title { margin: 0; }
+.article-content :is(.point-number, .question-number) {
+    background: var(--reading-badge);
+    border-radius: .7rem;
+    color: #181121;
+}
+.article-content .question-label { color: var(--reading-lavender); }
+
+.article-content :is(.scripture-block, .quote-block, .opening-question, .discussion-question,
+    .application-section, .sermon-point) > :last-child {
+    margin-block-end: 0;
+}
+
+html:has(body.article-page) { scroll-padding-block-end: calc(4.25rem + env(safe-area-inset-bottom, 0px)); }
+body.article-page { padding-block-end: calc(4.25rem + env(safe-area-inset-bottom, 0px)); }
+.article-page #article-top { position: absolute; inset-block-start: 0; inset-inline-start: 0; }
+.article-page #article-top:focus { outline: none; }
+.article-page .article-actions {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    padding: .45rem max(.75rem, env(safe-area-inset-left, 0px))
+        calc(.45rem + env(safe-area-inset-bottom, 0px))
+        max(.75rem, env(safe-area-inset-right, 0px));
+    background: #111016;
+    border-block-start: 1px solid #40394c;
+    z-index: 50;
+}
+.article-page:has(.mobile-nav.active) .article-actions { visibility: hidden; }
+.article-page .article-actions[role] a {
+    display: inline-flex;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem .75rem;
+    border: 1px solid #59486b;
+    border-radius: .65rem;
+    color: #efefe5;
+    background: #211b32;
+    font: 650 .875rem/1.25 Poppins, sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+.article-page .article-actions[role] a:hover {
+    color: #fff;
+    background: #352548;
+}
+.article-page .article-actions[role] a:focus-visible {
+    outline: 2px solid #cfacfb;
+    outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+    html:has(body.article-page) { scroll-behavior: auto; }
+    .article-page .fade-in { animation: none; opacity: 1; transform: none; }
+}

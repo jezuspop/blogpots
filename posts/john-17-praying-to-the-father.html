@@ -90,8 +90,11 @@
             .back-to-posts { display: none; }
         }
     </style>
+    <link rel="stylesheet" href="../assets/article-reading.css">
 </head>
-<body>
+<body class="article-page">
+    <div id="article-top" tabindex="-1"></div>
+
     <div class="progress-bar" id="progressBar"></div>
     <header>
         <div class="header-container">
@@ -127,7 +130,7 @@
     </section>
 
     <article class="article-container">
-        <div class="article-content">
+        <div class="article-content article-content--study">
             <h2>Opening Thought</h2>
             <div class="quote-block">
                 <p>How you view God is how you will pray to him?</p>
@@ -285,8 +288,6 @@
         </div>
     </article>
 
-    <a class="back-to-posts" href="../posts.html" aria-label="Back to all posts">&larr;</a>
-
     <footer>
         <div class="footer-links">
             <a href="../index.html">Home</a>
@@ -296,6 +297,11 @@
         </div>
         <p class="footer-copy">© 2026 Richard Buckner</p>
     </footer>
+
+    <div class="article-actions" role="navigation" aria-label="Article actions">
+        <a href="../posts.html">Back to Posts</a>
+        <a href="#article-top">Back to Top</a>
+    </div>
 
     <script>
         const progressBar = document.getElementById('progressBar');
