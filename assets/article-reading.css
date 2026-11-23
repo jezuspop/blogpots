@@ -152,3 +152,40 @@ body.article-page { padding-block-end: calc(4.25rem + env(safe-area-inset-bottom
     html:has(body.article-page) { scroll-behavior: auto; }
     .article-page .fade-in { animation: none; opacity: 1; transform: none; }
 }
+
+/* Keep the same easing curve while allowing each photo window to breathe. */
+.article-page .hero {
+    --article-hero-span: 64%;
+    --article-hero-focus: 50% 50%;
+}
+.article-page:has(:where(.article-content--discussion)) .hero { --article-hero-span: 70%; }
+.article-page .hero[data-hero-profile="inkblot"] { --article-hero-span: 69%; }
+.article-page .hero[data-hero-profile="four-three"] {
+    --article-hero-span: 60%;
+    --article-hero-focus: 50% 35%;
+}
+.article-page .hero[data-hero-profile="low-light"] { --article-hero-span: 62%; }
+.article-page .hero-bg img { object-position: var(--article-hero-focus); }
+@media (max-width: 600px) {
+    .article-page .hero[data-hero-profile="subject-left"] { --article-hero-focus: 32% 50%; }
+    .article-page .hero[data-hero-profile="subject-right"] { --article-hero-focus: 62% 50%; }
+}
+.article-page .hero-overlay {
+    --article-hero-black: var(--bg-primary, var(--bg, #0a0a0b));
+    --article-hero-fade: linear-gradient(to top,
+        var(--article-hero-black) 0%,
+        color-mix(in srgb, var(--article-hero-black) 99%, transparent) calc(var(--article-hero-span) * .11),
+        color-mix(in srgb, var(--article-hero-black) 94%, transparent) calc(var(--article-hero-span) * .22),
+        color-mix(in srgb, var(--article-hero-black) 84%, transparent) calc(var(--article-hero-span) * .34),
+        color-mix(in srgb, var(--article-hero-black) 69%, transparent) calc(var(--article-hero-span) * .46),
+        color-mix(in srgb, var(--article-hero-black) 46%, transparent) calc(var(--article-hero-span) * .60),
+        color-mix(in srgb, var(--article-hero-black) 23%, transparent) calc(var(--article-hero-span) * .74),
+        color-mix(in srgb, var(--article-hero-black) 7.5%, transparent) calc(var(--article-hero-span) * .86),
+        transparent var(--article-hero-span));
+}
+
+
+/* Keep verse markers in the original Scripture flow and italic style. */
+.article-content .scripture-block .scripture-verse-number {
+    color: var(--reading-lavender);
+}

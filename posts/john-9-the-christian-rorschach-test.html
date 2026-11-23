@@ -229,7 +229,7 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(to top, var(--bg-primary) 0%, rgba(10, 10, 11, 0.04) 22%, rgba(10, 10, 11, 0.12) 100%),
+                var(--article-hero-fade),
                 radial-gradient(circle at center, transparent 30%, rgba(10, 10, 11, 0.28) 100%);
         }
 
@@ -946,7 +946,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" data-hero-profile="inkblot">
         <div class="hero-bg">
             <img src="../images/john-9-christian-rorschach-test.jpeg" alt="A black and white Rorschach inkblot">
         </div>
@@ -999,7 +999,7 @@
             </div>
 
             <div class="scripture-block">
-              <p>As he went along, he saw a man blind from birth. [2] His disciples asked him, “Rabbi, who sinned, this man or his parents, that he was born blind?” [3] “Neither this man nor his parents sinned,” said Jesus, “but this happened so that the works of God might be displayed in him. [4] As long as it is day, we must do the works of him who sent me. Night is coming, when no one can work. [5] While I am in the world, I am the light of the world.” [6] After saying this, he spit on the ground, made some mud with the saliva, and put it on the man’s eyes. [7] “Go,” he told him, “wash in the Pool of Siloam” (this word means “Sent”). So the man went and washed, and came home seeing.</p>
+              <p>As he went along, he saw a man blind from birth. <span class="scripture-verse-number">[2]</span> His disciples asked him, “Rabbi, who sinned, this man or his parents, that he was born blind?” <span class="scripture-verse-number">[3]</span> “Neither this man nor his parents sinned,” said Jesus, “but this happened so that the works of God might be displayed in him. <span class="scripture-verse-number">[4]</span> As long as it is day, we must do the works of him who sent me. Night is coming, when no one can work. <span class="scripture-verse-number">[5]</span> While I am in the world, I am the light of the world.” <span class="scripture-verse-number">[6]</span> After saying this, he spit on the ground, made some mud with the saliva, and put it on the man’s eyes. <span class="scripture-verse-number">[7]</span> “Go,” he told him, “wash in the Pool of Siloam” (this word means “Sent”). So the man went and washed, and came home seeing.</p>
               <cite>John 9:1-7 (NIV)</cite>
             </div>
 
@@ -1043,7 +1043,7 @@
             </div>
 
             <div class="scripture-block">
-              <p>His neighbors and those who had formerly seen him begging asked, “Isn’t this the same man who used to sit and beg?” [9] Some claimed that he was. Others said, “No, he only looks like him.” But he himself insisted, “I am the man.” [10] “How then were your eyes opened?” they asked. [11] He replied, “The man they call Jesus made some mud and put it on my eyes. He told me to go to Siloam and wash. So I went and washed, and then I could see.” [12] “Where is this man?” they asked him. “I don’t know,” he said.</p>
+              <p>His neighbors and those who had formerly seen him begging asked, “Isn’t this the same man who used to sit and beg?” <span class="scripture-verse-number">[9]</span> Some claimed that he was. Others said, “No, he only looks like him.” But he himself insisted, “I am the man.” <span class="scripture-verse-number">[10]</span> “How then were your eyes opened?” they asked. <span class="scripture-verse-number">[11]</span> He replied, “The man they call Jesus made some mud and put it on my eyes. He told me to go to Siloam and wash. So I went and washed, and then I could see.” <span class="scripture-verse-number">[12]</span> “Where is this man?” they asked him. “I don’t know,” he said.</p>
               <cite>John 9:8-12 (NIV)</cite>
             </div>
 
@@ -1105,7 +1105,7 @@
             </div>
 
             <div class="scripture-block">
-              <p>They brought to the Pharisees the man who had been blind. [14] Now the day on which Jesus had made the mud and opened the man&#x27;s eyes was a Sabbath. [15] Therefore the Pharisees also asked him how he had received his sight. &quot;He put mud on my eyes,&quot; the man replied, &quot;and I washed, and now I see.&quot; [16] Some of the Pharisees said, &quot;This man is not from God, for he does not keep the Sabbath.&quot; But others asked, &quot;How can a sinner perform such signs?&quot; So they were divided. [17] Then they turned again to the blind man, &quot;What have you to say about him? It was your eyes he opened.&quot; The man replied, &quot;He is a prophet.&quot; [18] They still did not believe that he had been blind and had received his sight until they sent for the man&#x27;s parents.</p>
+              <p>They brought to the Pharisees the man who had been blind. <span class="scripture-verse-number">[14]</span> Now the day on which Jesus had made the mud and opened the man&#x27;s eyes was a Sabbath. <span class="scripture-verse-number">[15]</span> Therefore the Pharisees also asked him how he had received his sight. &quot;He put mud on my eyes,&quot; the man replied, &quot;and I washed, and now I see.&quot; <span class="scripture-verse-number">[16]</span> Some of the Pharisees said, &quot;This man is not from God, for he does not keep the Sabbath.&quot; But others asked, &quot;How can a sinner perform such signs?&quot; So they were divided. <span class="scripture-verse-number">[17]</span> Then they turned again to the blind man, &quot;What have you to say about him? It was your eyes he opened.&quot; The man replied, &quot;He is a prophet.&quot; <span class="scripture-verse-number">[18]</span> They still did not believe that he had been blind and had received his sight until they sent for the man&#x27;s parents.</p>
               <cite>John 9:13–18 (NIV)</cite>
             </div>
 
@@ -1166,7 +1166,7 @@
             </div>
 
             <div class="scripture-block">
-              <p>&quot;Is this your son?&quot; they asked. &quot;Is this the one you say was born blind? How is it that now he can see?&quot; [20] &quot;We know he is our son,&quot; the parents answered, &quot;and we know he was born blind. [21] But how he can see now, or who opened his eyes, we don&#x27;t know. Ask him. He is of age; he will speak for himself.&quot; [22] His parents said this because they were afraid of the Jewish leaders, who already had decided that anyone who acknowledged that Jesus was the Messiah would be put out of the synagogue. [23] That was why his parents said, &quot;He is of age; ask him.&quot;</p>
+              <p>&quot;Is this your son?&quot; they asked. &quot;Is this the one you say was born blind? How is it that now he can see?&quot; <span class="scripture-verse-number">[20]</span> &quot;We know he is our son,&quot; the parents answered, &quot;and we know he was born blind. <span class="scripture-verse-number">[21]</span> But how he can see now, or who opened his eyes, we don&#x27;t know. Ask him. He is of age; he will speak for himself.&quot; <span class="scripture-verse-number">[22]</span> His parents said this because they were afraid of the Jewish leaders, who already had decided that anyone who acknowledged that Jesus was the Messiah would be put out of the synagogue. <span class="scripture-verse-number">[23]</span> That was why his parents said, &quot;He is of age; ask him.&quot;</p>
               <cite>John 9:19–23 (NIV)</cite>
             </div>
 
@@ -1203,7 +1203,7 @@
 
             <h2 id="the-contrast-the-healed-man">The Contrast: The Healed Man</h2>
             <div class="scripture-block">
-              <p>Jesus heard that they had thrown him out, and when he found him, he said, “Do you believe in the Son of Man?” [36] “Who is he, sir?” the man asked. “Tell me so that I may believe in him.” [37] Jesus said, “You have now seen him; in fact, he is the one speaking with you.” [38] Then the man said, “Lord, I believe,” and he worshiped him. [39] Jesus said, “For judgment I have come into this world, so that the blind will see and those who see will become blind.”</p>
+              <p>Jesus heard that they had thrown him out, and when he found him, he said, “Do you believe in the Son of Man?” <span class="scripture-verse-number">[36]</span> “Who is he, sir?” the man asked. “Tell me so that I may believe in him.” <span class="scripture-verse-number">[37]</span> Jesus said, “You have now seen him; in fact, he is the one speaking with you.” <span class="scripture-verse-number">[38]</span> Then the man said, “Lord, I believe,” and he worshiped him. <span class="scripture-verse-number">[39]</span> Jesus said, “For judgment I have come into this world, so that the blind will see and those who see will become blind.”</p>
               <cite>John 9:35-39 (NIV)</cite>
             </div>
 
