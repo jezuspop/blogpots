@@ -1236,6 +1236,9 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .post-category.topical-sermons { background: #442956; color: #f4ddff; }
+        .notes-links { display:flex; align-items:center; justify-content:flex-end; gap:clamp(.65rem,3vw,1.6rem); flex-wrap:wrap; }
+        .notes-links a:first-child { color:#ddc2f8; }
     </style>
 </head>
 <body>
@@ -1280,17 +1283,17 @@
         <!-- Recent Posts -->
         <section class="section-header">
             <h2 class="section-title">my_notes</h2>
-            <a href="posts.html" class="view-all">View all <span>&rarr;</span></a>
+            <div class="notes-links"><a href="posts.html?category=topical-sermons" class="view-all">Topical Sermons</a><a href="posts.html" class="view-all">View all <span>&rarr;</span></a></div>
         </section>
 
         <div class="posts-grid">
-            <a href="posts/john-9-the-christian-rorschach-test.html" class="post-card fade-in" data-category="bible-study">
+            <a href="posts/john-9-the-christian-rorschach-test.html" class="post-card fade-in" data-category="topical-sermons">
                 <div class="post-card-image">
                     <img src="images/john-9-christian-rorschach-test.jpeg" alt="The Christian Rorschach Test">
                 </div>
                 <div class="post-card-content">
                     <div class="post-meta">
-                        <span class="post-category bible-study">Bible Study</span>
+                        <span class="post-category topical-sermons">Topical Sermons</span>
                         <span class="post-date">Jul 14, 2026</span>
                     </div>
                     <h3 class="post-card-title">The Christian Rorschach Test</h3>
