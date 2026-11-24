@@ -3,108 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John 17: Praying to the Father | RS Buckner</title>
+    <link rel="icon" type="image/jpeg" href="../images/IMG_1350.jpg">
+    <link rel="apple-touch-icon" href="../images/IMG_1350.jpg">
+    <title>John 17: Jesus Prays the Mission Home | RS Buckner</title>
+    <meta name="description" content="Read Jesus’ prayer in its Farewell Discourse setting, following its themes of glory, mission, unity, and presence with the Father.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        :root { --bg: #0a0a0b; --panel: #16161a; --panel2: #111113; --text: #efefe5; --muted: #a8a8a8; --quiet: #6f6f74; --purple: #a855f7; --gold: #f4c56f; --border: #2a2a2e; --grad: linear-gradient(135deg, #6a59e5, #e559e5); }
-        body { background: var(--bg); color: var(--text); font-family: Inter, sans-serif; line-height: 1.65; }
-        header { position: fixed; inset: 0 0 auto; z-index: 10; background: rgba(10,10,11,.86); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-        .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        a { color: inherit; }
-        .logo, nav a, .mobile-nav a { text-decoration: none; }
-        .logo { font: 700 1.1rem Poppins, sans-serif; }
-        nav { display: flex; gap: 1.5rem; align-items: center; }
-        nav a { color: var(--muted); font-weight: 600; font-size: .94rem; }
-        nav a:hover { color: var(--text); }
-        .nav-cta { color: var(--bg) !important; background: var(--grad); padding: .625rem 1rem; border-radius: 8px; }
-        .menu-toggle { display: none; width: 44px; height: 44px; border: 0; background: transparent; }
-        .menu-toggle span { display: block; width: 24px; height: 2px; margin: 5px auto; background: var(--text); transition: .25s; }
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-        .mobile-nav { display: none; position: fixed; inset: 0; background: rgba(10,10,11,.98); z-index: 9; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; opacity: 0; visibility: hidden; transition: .3s; }
-        .mobile-nav.active { opacity: 1; visibility: visible; }
-        .mobile-nav a { font: 700 1.4rem Poppins, sans-serif; }
-        .progress-bar { position: fixed; top: 72px; left: 0; height: 3px; width: 0; background: var(--grad); z-index: 11; }
-        .hero { min-height: 92vh; position: relative; display: grid; place-items: center; padding: 7rem 1.5rem 4rem; overflow: hidden; }
-        .hero-bg, .hero-overlay { position: absolute; inset: 0; }
-        .hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(1.35) contrast(1.04) saturate(1.08); }
-        .hero-content { position: relative; max-width: 760px; width: min(92vw, 760px); text-align: center; background: rgba(10,10,11,.28); backdrop-filter: blur(4px) brightness(0.82) saturate(1.08); -webkit-backdrop-filter: blur(4px) brightness(0.82) saturate(1.08); padding: 3rem 3.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,.22); }
-        .hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1.3rem; }
-        .post-category { background: rgba(168,85,247,.16); color: var(--purple); border-radius: 6px; padding: .38rem .9rem; font: 700 .75rem Poppins, sans-serif; text-transform: uppercase; letter-spacing: .05em; }
-        .article-date { color: var(--quiet); font-size: .9rem; }
-        h1, h2, h3, h4 { font-family: Poppins, sans-serif; color: var(--text); line-height: 1.2; }
-        h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 1.2rem; }
-        .hero-content p { color: var(--muted); font-size: 1.1rem; line-height: 1.8; }
-        .article-container { max-width: 820px; margin: 0 auto; padding: 4rem 2rem; }
-        .article-content { font: 1.08rem/1.88 Poppins, sans-serif; color: var(--muted); }
-        .article-content h2 { font-size: 1.85rem; margin: 3rem 0 1.2rem; }
-        .article-content h3 { font-size: 1.35rem; margin: 2.4rem 0 1rem; }
-        .article-content h4 { color: var(--gold); font-size: 1rem; margin: 1.5rem 0 .75rem; text-transform: uppercase; letter-spacing: .04em; }
-        p { margin-bottom: 1.35rem; }
-        strong { color: var(--text); }
-        em { color: var(--purple); }
-        ul, ol { margin: 1.4rem 0; padding-left: 1.4rem; }
-        li { margin-bottom: .72rem; }
-        .series-info, .sermon-point, .application-section, .scripture-block, .quote-block { border: 1px solid var(--border); }
-        .series-info { margin-bottom: 2.5rem; padding: 1.5rem; background: var(--panel); border-radius: 12px; }
-        .series-info ul { list-style: none; margin: 0; padding: 0; }
-        .series-info li { padding: .55rem 0; border-bottom: 1px solid var(--border); }
-        .series-info li:last-child { border-bottom: 0; }
-        .scripture-block { margin: 2.25rem 0; padding: 2rem; background: var(--panel); border-left: 4px solid var(--purple); border-radius: 0 12px 12px 0; }
-        .scripture-block p { color: var(--text); font-weight: 500; }
-        cite { display: block; color: var(--quiet); font-style: normal; font-size: .9rem; margin-top: 1rem; }
-        .sermon-point { margin: 3rem 0; padding: 2rem; background: var(--panel2); border-radius: 16px; }
-        .point-header { text-align: center; margin-bottom: 1.5rem; }
-        .point-number { width: 64px; height: 64px; margin: 0 auto .7rem; display: grid; place-items: center; background: var(--grad); border-radius: 16px; color: var(--bg); font-size: 1.7rem; font-weight: 700; }
-        .point-title { font-size: 1.45rem; }
-        .quote-block, .application-section { margin: 2.6rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(106,89,229,.12), rgba(229,89,229,.1)); border-radius: 16px; }
-        .quote-block p { color: var(--text); font-style: italic; }
-        .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 2.5rem 0; }
-        .stat-card { padding: 1.75rem; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; text-align: center; }
-        .stat-number { display: block; margin-bottom: .65rem; color: var(--purple); font: 700 1.75rem Poppins, sans-serif; line-height: 1.1; }
-        .stat-label { display: block; color: var(--text); font-weight: 700; margin-bottom: .45rem; }
-        .stat-note { color: var(--quiet); font-size: .92rem; line-height: 1.55; }
-        .stats-wide { grid-column: 1 / -1; }
-        .stats-wide .stat-number { font-size: 1.55rem; }
-        footer { margin-top: 4rem; padding: 3rem 2rem; border-top: 1px solid var(--border); text-align: center; }
-        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem; }
-        .footer-links a { color: var(--quiet); text-decoration: none; }
-        .footer-copy { color: var(--quiet); font-size: .9rem; }
-        .back-to-posts { position: fixed; bottom: 2rem; left: 2rem; width: 48px; height: 48px; display: grid; place-items: center; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; text-decoration: none; z-index: 8; }
-        .back-to-posts:hover { background: var(--grad); color: var(--bg); }
-        @media (max-width: 820px) {
-            nav { display: none; }
-            .menu-toggle, .mobile-nav { display: flex; }
-            .header-container { padding: .875rem 1rem; }
-            .hero { min-height: 560px; }
-            .hero-content { padding: 2rem 1.5rem; }
-            .article-container { padding: 3rem 1rem; }
-            .scripture-block, .sermon-point, .quote-block, .application-section { padding: 1.4rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .stat-card { padding: 1.4rem; }
-            .back-to-posts { display: none; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/topical-sermon.css">
+    <link rel="stylesheet" href="../assets/bible-study-reading.css">
     <link rel="stylesheet" href="../assets/article-reading.css">
 </head>
 <body class="article-page">
     <div id="article-top" tabindex="-1"></div>
 
     <div class="progress-bar" id="progressBar"></div>
+
     <header>
         <div class="header-container">
-            <a href="../index.html" class="logo">RS Buckner</a>
+            <a href="../index.html" class="logo">
+                <div class="logo-icon"><img src="../images/IMG_1350.jpg" alt="RS Buckner"></div>
+                <span class="logo-text">RS Buckner</span>
+            </a>
             <nav>
                 <a href="../index.html">Home</a>
                 <a href="../posts.html">Posts</a>
                 <a href="../about.html">About</a>
                 <a href="mailto:richard.buckner@gpcc.org" class="nav-cta">Contact</a>
             </nav>
-            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -116,176 +47,588 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-bg"><img src="../images/john-17-praying-to-the-father.png" alt="A father and child looking toward the heavens"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-meta">
-                <span class="post-category">Bible Study</span>
-                <span class="article-date">May 23, 2026</span>
-            </div>
-            <h1>John 17: Praying to the Father</h1>
-            <p>Jesus' longest recorded prayer shows us how the Son speaks to the Father, and why that relationship should shape the way we pray.</p>
-        </div>
-    </section>
+   <div class="hero-bg"><img src="../images/john-17-praying-to-the-father.png" alt="A father and child looking toward the heavens"></div>
+   <div class="hero-overlay"></div>
+   <div class="hero-content fade-in">
+      <div class="hero-meta"><span class="post-category bible-study">Bible Study</span><time class="article-date" datetime="2026-11-24">November 24, 2026</time></div>
+      <h1>John 17: Jesus Prays the Mission Home</h1>
+      <p>Read Jesus’ prayer in its Farewell Discourse setting, following its themes of glory, mission, unity, and presence with the Father.</p>
+   </div>
+</section>
+<article class="article-container">
+ <div class="article-content article-content--study bible-study-content fade-in fade-in-delay-1">
+<div class="series-info"><p><strong>Passage and Book Study</strong></p><p>Read alongside: <a href="https://www.biblegateway.com/passage/?search=John+17">John 17</a></p></div><nav class="study-outline" aria-label="On this page"><details><summary>On this page</summary><ol><li><a href="#literary-placement-in-johns-narrative-arc">Literary Placement in John&#x27;s Narrative Arc</a></li><li><a href="#john-17-structure">John 17 Structure</a></li><li><a href="#key-themes">Key Themes</a></li><li><a href="#jesus-prays-for-glory-through-completed-mission-john-171-5">1. Jesus Prays for Glory Through Completed Mission (John 17:1-5)</a></li><li><a href="#jesus-prays-for-his-disciples-in-the-world-john-176-19">2. Jesus Prays for His Disciples in the World (John 17:6-19)</a></li><li><a href="#jesus-prays-for-future-believers-and-visible-unity-john-1720-23">3. Jesus Prays for Future Believers and Visible Unity (John 17:20-23)</a></li><li><a href="#jesus-prays-for-final-presence-and-shared-love-john-1724-26">4. Jesus Prays for Final Presence and Shared Love (John 17:24-26)</a></li><li><a href="#greek-summary">Greek Summary</a></li><li><a href="#takeaway-4">Takeaway</a></li><li><a href="#reflection-questions">Reflection Questions</a></li><li><a href="#connection-to-the-gospel">Connection to the Gospel</a></li><li><a href="#putting-the-study-into-practice">Putting the Study into Practice</a></li></ol></details></nav><hr />
+<h3 id="introduction-context">Introduction &amp; Context</h3>
+<p>John 17 is the climax of the Farewell Discourse (<strong>John 13-17</strong>). After washing the disciples' feet (<strong>John 13</strong>), comforting their troubled hearts (<strong>John 14</strong>), calling them to abide (<strong>John 15</strong>), and explaining the Spirit's coming advantage (<strong>John 16</strong>), Jesus now turns from teaching the disciples to praying to the Father.</p>
+<p>The chapter is often called the <strong>High Priestly Prayer</strong>, though John never uses that title. The title is fitting because Jesus intercedes for his people on the eve of sacrifice, but the chapter is also royal, filial, missional, and deeply relational. Jesus prays as the Son returning to the Father's glory, the sent one completing the Father's work, and the shepherd guarding the people the Father gave him.</p>
+<p>The timing matters. Jesus is hours from betrayal, arrest, abandonment, trial, torture, and crucifixion. Yet his prayer is not panic. It is ordered, clear, intimate, and mission-focused.</p>
+<h3 id="big-idea">Big Idea</h3>
+<p>On the night before the cross, Jesus prays that the Father would glorify the Son through the completion of his mission, protect and sanctify his disciples, and unite future believers so the world may see the Father's love in the Son's people.</p>
+<h3 id="driving-question">Driving Question</h3>
+<p>What does Jesus want most for his people when he prays on the edge of the cross?</p>
+<hr />
+<h2 id="literary-placement-in-johns-narrative-arc">Literary Placement in John's Narrative Arc</h2>
+<p>John 17 gathers the themes of the whole Gospel and prays them back to the Father.</p>
+<div class="study-table-scroll" tabindex="0" role="region" aria-label="Scrollable study table"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Earlier John Theme</th>
+<th>John 17 Fulfillment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The Word was with God and was God</strong> -- <strong>John 1:1</strong></td>
+<td>Jesus speaks of glory with the Father before the world existed -- <strong>John 17:5</strong></td>
+</tr>
+<tr>
+<td><strong>The Word became flesh</strong> -- <strong>John 1:14</strong></td>
+<td>The incarnate mission is completed -- <strong>John 17:4</strong></td>
+</tr>
+<tr>
+<td><strong>No one has seen God; the Son makes him known</strong> -- <strong>John 1:18</strong></td>
+<td>Jesus has manifested the Father's name -- <strong>John 17:6, 26</strong></td>
+</tr>
+<tr>
+<td><strong>The Father gives all things to the Son</strong> -- <strong>John 3:35</strong></td>
+<td>The Father gives people, work, words, and glory to the Son -- <strong>John 17:2, 4, 6, 8, 22, 24</strong></td>
+</tr>
+<tr>
+<td><strong>Eternal life through believing</strong> -- <strong>John 3:16; 5:24</strong></td>
+<td>Eternal life is knowing the Father and Jesus Christ -- <strong>John 17:3</strong></td>
+</tr>
+<tr>
+<td><strong>Jesus is sent by the Father</strong> -- throughout John</td>
+<td>Jesus sends disciples as the Father sent him -- <strong>John 17:18</strong></td>
+</tr>
+<tr>
+<td><strong>Love one another</strong> -- <strong>John 13:34-35; 15:12-17</strong></td>
+<td>Unity and love become visible witness to the world -- <strong>John 17:21-23</strong></td>
+</tr>
+<tr>
+<td><strong>The world hates Jesus' own</strong> -- <strong>John 15:18-25</strong></td>
+<td>Jesus prays protection from the evil one, not removal from the world -- <strong>John 17:14-16</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="john-17-structure">John 17 Structure</h2>
+<div class="study-table-scroll" tabindex="0" role="region" aria-label="Scrollable study table"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Section</th>
+<th>Text</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jesus prays for himself</strong></td>
+<td><strong>John 17:1-5</strong></td>
+<td>Glory, completed work, eternal life, return to preexistent glory</td>
+</tr>
+<tr>
+<td><strong>Jesus prays for the disciples</strong></td>
+<td><strong>John 17:6-19</strong></td>
+<td>Revelation, protection, joy, holiness, mission, sanctification</td>
+</tr>
+<tr>
+<td><strong>Jesus prays for future believers</strong></td>
+<td><strong>John 17:20-26</strong></td>
+<td>Unity, witness, glory, love, final presence with Jesus</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="simple-movement">Simple Movement</h3>
+<ol type="1">
+<li><strong>Glorify the Son</strong> -- <strong>John 17:1-5</strong></li>
+<li><strong>Keep and sanctify the disciples</strong> -- <strong>John 17:6-19</strong></li>
+<li><strong>Unite the believers for witness and love</strong> -- <strong>John 17:20-26</strong></li>
+</ol>
+<hr />
+<h2 id="key-themes">Key Themes</h2>
+<ol type="1">
+<li><strong>Glory through the cross</strong> -- <strong>John 17:1, 4-5</strong>
+<ul>
+<li>In John, glory is not escape from suffering but revelation through suffering.</li>
+</ul></li>
+<li><strong>Eternal life as relational knowing</strong> -- <strong>John 17:3</strong>
+<ul>
+<li>Eternal life is not merely endless duration; it is knowing the Father and the Son.</li>
+</ul></li>
+<li><strong>The Father's gift to the Son</strong> -- <strong>John 17:2, 6, 9, 24</strong>
+<ul>
+<li>The disciples belong to the Father and are given to Jesus.</li>
+</ul></li>
+<li><strong>The revelation of the Father's name</strong> -- <strong>John 17:6, 11-12, 26</strong>
+<ul>
+<li>Jesus makes God's character, authority, and covenant identity known.</li>
+</ul></li>
+<li><strong>Protection, not escape</strong> -- <strong>John 17:11, 15</strong>
+<ul>
+<li>Jesus does not ask that disciples be removed from the world but kept from the evil one.</li>
+</ul></li>
+<li><strong>Joy inside hostile mission</strong> -- <strong>John 17:13-14</strong>
+<ul>
+<li>Jesus prays for joy even while acknowledging the world's hatred.</li>
+</ul></li>
+<li><strong>Sanctification by truth</strong> -- <strong>John 17:17, 19</strong>
+<ul>
+<li>The disciples are set apart by the Father's word and by Jesus' self-consecration.</li>
+</ul></li>
+<li><strong>Sent as Jesus was sent</strong> -- <strong>John 17:18</strong>
+<ul>
+<li>Mission is patterned after Jesus' own sending.</li>
+</ul></li>
+<li><strong>Unity for witness</strong> -- <strong>John 17:20-23</strong>
+<ul>
+<li>The unity of believers is tied to the world's recognition of Jesus' mission.</li>
+</ul></li>
+<li><strong>Love before the foundation of the world</strong> -- <strong>John 17:24, 26</strong></li>
+</ol>
+<ul>
+<li>The love between Father and Son becomes the source and destiny of the church.</li>
+</ul>
+<hr />
+<h3 id="old-testament">Old Testament</h3>
+<div class="study-table-scroll" tabindex="0" role="region" aria-label="Scrollable study table"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Connection to John 17</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exodus 3:13-15</strong> -- God's name revealed</td>
+<td>Jesus manifests the Father's name (<strong>John 17:6, 26</strong>).</td>
+</tr>
+<tr>
+<td><strong>Exodus 28:29-30</strong> -- the high priest bears Israel before God</td>
+<td>Jesus intercedes for those given to him.</td>
+</tr>
+<tr>
+<td><strong>Leviticus 16</strong> -- Day of Atonement</td>
+<td>Priestly background for intercession before sacrifice.</td>
+</tr>
+<tr>
+<td><strong>Numbers 6:24-27</strong> -- priestly blessing and God's name on his people</td>
+<td>Protection and divine name language resonate with <strong>John 17:11-12</strong>.</td>
+</tr>
+<tr>
+<td><strong>Psalm 2:7-8</strong> -- Sonship and nations</td>
+<td>The Son's mission extends to the world.</td>
+</tr>
+<tr>
+<td><strong>Psalm 110:1-4</strong> -- priest-king imagery</td>
+<td>Jesus' prayer stands on the edge of enthronement through death and resurrection.</td>
+</tr>
+<tr>
+<td><strong>Isaiah 49:1-6</strong> -- servant as light to the nations</td>
+<td>Jesus' mission and the disciples' mission move outward to the world.</td>
+</tr>
+<tr>
+<td><strong>Isaiah 52:13-53:12</strong> -- suffering servant glorified</td>
+<td>Glory through suffering parallels John 17 and the Passion.</td>
+</tr>
+<tr>
+<td><strong>Ezekiel 36:22-27</strong> -- God's name, cleansing, Spirit</td>
+<td>God's name, holiness, and renewed people connect to John 17's sanctification.</td>
+</tr>
+<tr>
+<td><strong>Zechariah 14:9</strong> -- the LORD one and his name one</td>
+<td>Unity and name theology echo in Jesus' prayer.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="new-testament">New Testament</h3>
+<div class="study-table-scroll" tabindex="0" role="region" aria-label="Scrollable study table"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Connection to John 17</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>John 1:1-18</strong></td>
+<td>Preexistence, glory, grace/truth, revelation of the Father.</td>
+</tr>
+<tr>
+<td><strong>John 3:16-17</strong></td>
+<td>God's love, sending of the Son, life for the world.</td>
+</tr>
+<tr>
+<td><strong>John 5:19-30</strong></td>
+<td>Father/Son unity in work, judgment, life.</td>
+</tr>
+<tr>
+<td><strong>John 10:28-30</strong></td>
+<td>Jesus keeps his sheep; Father and Son are one.</td>
+</tr>
+<tr>
+<td><strong>John 13:34-35</strong></td>
+<td>Love as the identifying mark of disciples.</td>
+</tr>
+<tr>
+<td><strong>John 14:6-11</strong></td>
+<td>Jesus as access and revelation of the Father.</td>
+</tr>
+<tr>
+<td><strong>John 15:9-17</strong></td>
+<td>Abiding in love, friendship, chosen and appointed for fruit.</td>
+</tr>
+<tr>
+<td><strong>John 16:33</strong></td>
+<td>Peace in Jesus because he has overcome the world.</td>
+</tr>
+<tr>
+<td><strong>Romans 8:34</strong></td>
+<td>Christ intercedes for believers.</td>
+</tr>
+<tr>
+<td><strong>Ephesians 2:11-22</strong></td>
+<td>Unity in Christ and the church as God's dwelling.</td>
+</tr>
+<tr>
+<td><strong>Ephesians 4:1-6</strong></td>
+<td>One body, one Spirit, one Lord, one faith, one baptism.</td>
+</tr>
+<tr>
+<td><strong>Hebrews 4:14-16; 7:25</strong></td>
+<td>Jesus as ascended high priest who intercedes.</td>
+</tr>
+<tr>
+<td><strong>1 Peter 1:15-16</strong></td>
+<td>Holiness because God is holy.</td>
+</tr>
+<tr>
+<td><strong>1 John 1:1-4; 4:7-12</strong></td>
+<td>Life, fellowship, love, and visible witness.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="passage-study">Passage Study</h2>
+<h3 id="introduction">Introduction</h3>
+<p>John 17 lets us overhear the prayer life of Jesus at the most important moment of his earthly ministry. The cross is not an accident Jesus is trying to survive. It is the hour through which the Son will glorify the Father and the Father will glorify the Son. Before Jesus is arrested, he prays the meaning of the cross over himself and over his people.</p>
+<p>This chapter is not mainly a model prayer for us, though it teaches us how to pray. It is first the prayer Jesus prays for us. He prays for our protection, holiness, mission, unity, joy, and final presence with him.</p>
+<p><strong>One-sentence sermon summary:</strong></p>
+<div class="quote-block">
+<p>Jesus prays that his completed mission would glorify the Father, secure his disciples in the world, and unite future believers as visible witnesses of divine love.</p>
+</div>
+<hr />
+<div class="sermon-point"><div class="point-header"><div class="point-number" aria-hidden="true">1</div><h2 class="point-title" id="jesus-prays-for-glory-through-completed-mission-john-171-5">Jesus Prays for Glory Through Completed Mission (John 17:1-5)</h2></div></div>
+<div class="scripture-block">
+<p>Read the passage: <a href="https://www.biblegateway.com/passage/?search=John+17%3A1">John 17:1</a></p>
+</div>
+<p><strong>Main Point:</strong> Jesus does not ask to avoid the hour. He asks that the hour reveal glory. The cross is not a detour around glory; in John, the cross is the path of glory. Jesus has completed the work the Father gave him, and now he asks to be glorified with the preexistent glory he had with the Father before the world existed.</p>
+<h3 id="exegetical-notes">Exegetical Notes</h3>
+<ul>
+<li><strong>"The hour has come"</strong> (<strong>John 17:1</strong>) recalls the repeated Johannine theme that Jesus' hour had not yet come (<strong>John 2:4; 7:30; 8:20</strong>) until Passion week (<strong>John 12:23, 27; 13:1</strong>).</li>
+<li><strong>"Glorify"</strong> translates <strong>δοξάζω</strong> (<em>doxazō</em>). In John, glory is revealed most fully in the cross, resurrection, and return to the Father.</li>
+<li><strong>"Eternal life"</strong> (<strong>John 17:3</strong>) is defined relationally: knowing the only true God and Jesus Christ whom he sent.</li>
+<li><strong>"I glorified you on earth"</strong> (<strong>John 17:4</strong>) means Jesus' entire incarnate mission revealed the Father.</li>
+<li><strong>"Before the world existed"</strong> (<strong>John 17:5</strong>) points back to the preexistent Word in <strong>John 1:1-2</strong>.</li>
+</ul>
+<h3 id="theological-weight">Theological Weight</h3>
+<p>John 17:3 does not reduce eternal life to information. "Knowing" in biblical language is relational, covenantal, and participatory. Eternal life is fellowship with the Father through the Son.</p>
+<h3 id="best-teaching-line">Best Teaching Line</h3>
+<p>Jesus defines eternal life not first as a place you go, but as a Person you know.</p>
+<h3 id="application">Application</h3>
+<p>Some disciples want God to remove hard moments before they reveal anything. Jesus shows a different path: he asks the Father to be glorified through the hour, not by avoiding it.</p>
+<h3 id="takeaway">Takeaway</h3>
+<p>The cross is not Jesus losing glory. The cross is where divine glory becomes visible in sacrificial love.</p>
+<hr />
+<div class="sermon-point"><div class="point-header"><div class="point-number" aria-hidden="true">2</div><h2 class="point-title" id="jesus-prays-for-his-disciples-in-the-world-john-176-19">Jesus Prays for His Disciples in the World (John 17:6-19)</h2></div></div>
+<div class="scripture-block">
+<p>Read the passage: <a href="https://www.biblegateway.com/passage/?search=John+17%3A11">John 17:11</a></p>
+</div>
+<p><strong>Main Point:</strong> Jesus does not pray for the disciples to be removed from danger. He prays that the Father would keep them, unite them, fill them with joy, protect them from the evil one, sanctify them in truth, and send them into the world.</p>
+<h3 id="exegetical-notes-1">Exegetical Notes</h3>
+<ul>
+<li><strong>"I have manifested your name"</strong> (<strong>John 17:6</strong>) means Jesus has revealed the Father's character, authority, identity, and covenant presence.</li>
+<li><strong>"They were yours, and you gave them to me"</strong> (<strong>John 17:6</strong>) emphasizes divine ownership before discipleship.</li>
+<li><strong>"Keep them in your name"</strong> (<strong>John 17:11</strong>) is protection language rooted in God's revealed identity.</li>
+<li><strong>"That they may be one"</strong> (<strong>John 17:11</strong>) begins the unity theme that expands in <strong>John 17:20-23</strong>.</li>
+<li><strong>"I do not ask that you take them out of the world"</strong> (<strong>John 17:15</strong>) destroys escapist discipleship.</li>
+<li><strong>"Sanctify them in the truth; your word is truth"</strong> (<strong>John 17:17</strong>) frames holiness as consecration for mission through God's revelation.</li>
+<li><strong>"As you sent me... so I have sent them"</strong> (<strong>John 17:18</strong>) gives the disciples a mission patterned after Jesus' own sending.</li>
+</ul>
+<h3 id="key-tension">Key Tension</h3>
+<p>Jesus prays:</p>
+<ul>
+<li>In the world, but not of the world</li>
+<li>Protected, but not removed</li>
+<li>Holy, but not isolated</li>
+<li>Sent, but not self-powered</li>
+</ul>
+<h3 id="best-teaching-line-1">Best Teaching Line</h3>
+<p>Jesus does not pray for a safe church. He prays for a sanctified church sent into an unsafe world.</p>
+<h3 id="application-1">Application</h3>
+<p>Many disciples want holiness through withdrawal. Jesus prays for holiness inside mission. The church is not preserved by hiding from the world but by being kept by the Father, sanctified by truth, and sent like Jesus.</p>
+<h3 id="takeaway-1">Takeaway</h3>
+<p>The church is not a bunker. It is a sanctified people sent into enemy territory with the Father's name over them.</p>
+<hr />
+<div class="sermon-point"><div class="point-header"><div class="point-number" aria-hidden="true">3</div><h2 class="point-title" id="jesus-prays-for-future-believers-and-visible-unity-john-1720-23">Jesus Prays for Future Believers and Visible Unity (John 17:20-23)</h2></div></div>
+<div class="scripture-block">
+<p>Read the passage: <a href="https://www.biblegateway.com/passage/?search=John+17%3A20">John 17:20</a></p>
+</div>
+<p><strong>Main Point:</strong> Jesus prays beyond the room. He sees future believers who will come through apostolic witness, and he prays for their unity as a visible sign to the world that the Father sent the Son.</p>
+<h3 id="exegetical-notes-2">Exegetical Notes</h3>
+<ul>
+<li><strong>"Those who will believe in me through their word"</strong> (<strong>John 17:20</strong>) includes every future believer reached through apostolic testimony.</li>
+<li><strong>"That they may all be one"</strong> (<strong>John 17:21</strong>) is not vague friendliness. It is unity grounded in the Father-Son relationship.</li>
+<li><strong>"So that the world may believe"</strong> (<strong>John 17:21</strong>) ties unity to mission.</li>
+<li><strong>"The glory that you have given me I have given to them"</strong> (<strong>John 17:22</strong>) means believers participate in the Son's mission-shaped glory.</li>
+<li><strong>"That they may become perfectly one"</strong> (<strong>John 17:23</strong>) uses completion/perfection language, not superficial harmony.</li>
+<li><strong>"That the world may know"</strong> (<strong>John 17:23</strong>) repeats the witness function of unity.</li>
+</ul>
+<h3 id="theological-weight-1">Theological Weight</h3>
+<p>John 17 unity is not organizational sameness, personality compatibility, or conflict avoidance. It is shared life in the Father and Son that becomes visible through love, truth, holiness, and mission.</p>
+<h3 id="best-teaching-line-2">Best Teaching Line</h3>
+<p>Unity is not the mission, but without unity the mission loses credibility.</p>
+<h3 id="application-2">Application</h3>
+<p>Disunity does not merely hurt feelings. It distorts the witness of the church. Jesus prays that the world would see something in the unity of believers that points back to the sending love of the Father.</p>
+<h3 id="takeaway-2">Takeaway</h3>
+<p>The world has the right to inspect our love when we claim to represent Jesus.</p>
+<hr />
+<div class="sermon-point"><div class="point-header"><div class="point-number" aria-hidden="true">4</div><h2 class="point-title" id="jesus-prays-for-final-presence-and-shared-love-john-1724-26">Jesus Prays for Final Presence and Shared Love (John 17:24-26)</h2></div></div>
+<div class="scripture-block">
+<p>Read the passage: <a href="https://www.biblegateway.com/passage/?search=John+17%3A24">John 17:24</a></p>
+</div>
+<p><strong>Main Point:</strong> Jesus' final desire is presence. He wants his people with him to behold his glory and to live inside the love the Father has for the Son.</p>
+<h3 id="exegetical-notes-3">Exegetical Notes</h3>
+<ul>
+<li><strong>"I desire"</strong> (<strong>John 17:24</strong>) is strikingly personal. Jesus expresses holy desire to the Father.</li>
+<li><strong>"Whom you have given me"</strong> repeats the gift-language of the chapter.</li>
+<li><strong>"May be with me where I am"</strong> is the relational goal of salvation.</li>
+<li><strong>"To see my glory"</strong> means final participation in the revelation of the Son.</li>
+<li><strong>"You loved me before the foundation of the world"</strong> (<strong>John 17:24</strong>) reaches back into eternal Father-Son love.</li>
+<li><strong>"I made known to them your name, and I will continue to make it known"</strong> (<strong>John 17:26</strong>) shows Jesus' revelation continues through the Spirit and the church's life.</li>
+<li><strong>"That the love with which you have loved me may be in them, and I in them"</strong> (<strong>John 17:26</strong>) is one of the deepest union-with-Christ statements in John.</li>
+</ul>
+<h3 id="best-teaching-line-3">Best Teaching Line</h3>
+<p>The end of salvation is not merely that we escape judgment. The end is that we are brought into the love the Father has for the Son.</p>
+<h3 id="application-3">Application</h3>
+<p>Jesus does not merely want useful servants. He wants his people with him. Mission is real, holiness is real, unity is real, but the final horizon is presence with Christ and participation in divine love.</p>
+<h3 id="takeaway-3">Takeaway</h3>
+<p>Jesus' final prayer is not that we would do more for him, but that we would be with him and know the Father's love in him.</p>
+<hr />
+<h2 id="greek-summary">Greek Summary</h2>
+<div class="study-table-scroll" tabindex="0" role="region" aria-label="Scrollable study table"><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Greek</th>
+<th>Transliteration</th>
+<th>Meaning</th>
+<th>John 17 Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>δόξα / δοξάζω</strong></td>
+<td><em>doxa / doxazō</em></td>
+<td>glory / glorify</td>
+<td>The cross, resurrection, and return reveal divine glory.</td>
+</tr>
+<tr>
+<td><strong>ζωὴ αἰώνιος</strong></td>
+<td><em>zōē aiōnios</em></td>
+<td>eternal life</td>
+<td>Defined as knowing the Father and the Son (<strong>John 17:3</strong>).</td>
+</tr>
+<tr>
+<td><strong>γινώσκω</strong></td>
+<td><em>ginōskō</em></td>
+<td>know</td>
+<td>Relational, covenantal knowing, not bare information.</td>
+</tr>
+<tr>
+<td><strong>ὄνομα</strong></td>
+<td><em>onoma</em></td>
+<td>name</td>
+<td>God's revealed identity, authority, and covenant character.</td>
+</tr>
+<tr>
+<td><strong>κόσμος</strong></td>
+<td><em>kosmos</em></td>
+<td>world</td>
+<td>The realm hostile to Jesus, yet still the object of mission.</td>
+</tr>
+<tr>
+<td><strong>τηρέω</strong></td>
+<td><em>tēreō</em></td>
+<td>keep, guard</td>
+<td>The Father protects disciples in his name.</td>
+</tr>
+<tr>
+<td><strong>ἁγιάζω</strong></td>
+<td><em>hagiazō</em></td>
+<td>sanctify, consecrate</td>
+<td>Set apart in truth for mission.</td>
+</tr>
+<tr>
+<td><strong>ἀποστέλλω</strong></td>
+<td><em>apostellō</em></td>
+<td>send</td>
+<td>Disciples are sent as Jesus was sent.</td>
+</tr>
+<tr>
+<td><strong>ἕν</strong></td>
+<td><em>hen</em></td>
+<td>one</td>
+<td>Unity patterned after Father-Son communion.</td>
+</tr>
+<tr>
+<td><strong>τελειόω</strong></td>
+<td><em>teleioō</em></td>
+<td>complete, perfect</td>
+<td>Unity brought to completion for witness.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="takeaway-4">Takeaway</h2>
+<ul>
+<li>Jesus prays before the cross because the cross is not chaos to him.</li>
+<li>Eternal life is not just living forever; it is knowing the Father through the Son.</li>
+<li>Jesus does not pray us out of the world; he prays us into mission.</li>
+<li>Truth sanctifies; sentiment does not.</li>
+<li>Unity is not optional because witness is not optional.</li>
+<li>The world should be able to look at the church's love and see evidence that the Father sent the Son.</li>
+<li>Jesus' final desire is presence: "that they may be with me where I am."</li>
+</ul>
+<hr />
+<div class="application-section"><h2 id="reflection-questions">Reflection Questions</h2>
+<ol type="1">
+<li>Do I define eternal life mainly as heaven later or knowing God now?</li>
+<li>Am I asking God to remove me from the world when Jesus prayed to send me into it?</li>
+<li>Is my holiness connected to mission or just personal avoidance?</li>
+<li>Where am I resisting sanctification by truth?</li>
+<li>Does my relationship with other believers make Jesus' mission more believable or less believable?</li>
+<li>Am I protecting unity without truth, or truth without love?</li>
+<li>Do I believe Jesus actually desires me to be with him?</li>
+<li>What would change if I saw John 17 as Jesus praying over me?</li>
+</ol>
+<hr />
+<h2 id="connection-to-the-gospel">Connection to the Gospel</h2>
+<p>John 17 shows that salvation is bigger than forgiveness alone. Jesus prays us into the life of God: forgiven, guarded, sanctified, sent, united, loved, and brought home to behold his glory.</p>
+<p>The cross answers Jesus' prayer. Through the cross, the Son glorifies the Father. Through the resurrection and ascension, the Father glorifies the Son. Through the Spirit and apostolic witness, disciples are kept, sanctified, sent, and united. The prayer of John 17 becomes the shape of the church's life.</p>
+<hr />
+<h2 id="putting-the-study-into-practice">Putting the Study into Practice</h2>
+<ul>
+<li>Receive eternal life as knowing God through Jesus.</li>
+<li>Let the Father's name define your identity.</li>
+<li>Stay in the world without belonging to the world.</li>
+<li>Be sanctified by truth.</li>
+<li>Guard unity because mission is at stake.</li>
+<li>Live as someone Jesus prayed for before the cross.</li>
+<li>Move toward the final desire of Jesus: being with him and beholding his glory.</li>
+</ul></div>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul>
+<li>D. A. Carson, <em>The Gospel According to John</em> -- John 17 as the climax of the Farewell Discourse, with glory through the cross.</li>
+<li>Craig S. Keener, <em>The Gospel of John: A Commentary</em> -- background on Jewish prayer, mission, and Johannine unity.</li>
+<li>Andreas J. Köstenberger, <em>John</em> -- Father-Son mission, "sent" language, and theological structure.</li>
+<li>Leon Morris, <em>The Gospel According to John</em> -- devotional and theological weight of Jesus' intercession.</li>
+<li>N. T. Wright, <em>John for Everyone</em> -- pastoral emphasis on Jesus praying his followers into mission.</li>
+<li>Raymond E. Brown, <em>The Gospel According to John XIII-XXI</em> -- major critical commentary on John 17's structure and theology.</li>
+</ul>
+<h3 id="core-biblical-texts">Core Biblical Texts</h3>
+<ul>
+<li><strong>John 1:1-18</strong></li>
+<li><strong>John 13:31-35</strong></li>
+<li><strong>John 14:1-31</strong></li>
+<li><strong>John 15:1-27</strong></li>
+<li><strong>John 16:1-33</strong></li>
+<li><strong>John 17:1-26</strong></li>
+<li><strong>Romans 8:34</strong></li>
+<li><strong>Ephesians 2:11-22</strong></li>
+<li><strong>Ephesians 4:1-6</strong></li>
+<li><strong>Hebrews 4:14-16</strong></li>
+<li><strong>Hebrews 7:25</strong></li>
+<li><strong>1 John 4:7-12</strong></li>
+</ul>
 
-    <article class="article-container">
-        <div class="article-content article-content--study">
-            <h2>Opening Thought</h2>
-            <div class="quote-block">
-                <p>How you view God is how you will pray to him?</p>
-            </div>
-            <p>John 17 is Jesus' longest recorded prayer. It comes after the upper-room teaching and before the arrest, trial, and cross. The hour has come. The pressure is real. The disciples are confused. The world is hostile. And Jesus prays.</p>
-
-            <h2>Jesus Prays to the Father</h2>
-            <div class="scripture-block">
-                <p>After Jesus said this, he looked toward heaven and prayed: "Father, the hour has come. Glorify your Son, that your Son may glorify you."</p>
-                <cite>John 17:1 NIV</cite>
-            </div>
-            <p>Jesus does not begin with panic. He does not begin with distance. He does not begin with vague religious language. He begins with Father.</p>
-
-            <p>Jesus addresses God as Father six times in this prayer: Father in John 17:1 and 17:5, Holy Father in John 17:11, Father in John 17:21 and 17:24, and Righteous Father in John 17:25.</p>
-
-            <p>Before we run to all the other passages about prayer, we need to notice the doorway John 17 gives us: Jesus invites us to overhear the way the Son speaks to the Father. John 17 is not only a lesson on intercession, unity, mission, or sanctification. It is also a lesson on how Jesus views God in prayer.</p>
-
-            <div class="sermon-point">
-                <div class="point-header">
-                    <div class="point-number">1</div>
-                    <h3 class="point-title">The Way We View God Matters</h3>
-                </div>
-                <p>Jesus prays to God as Father. That is not a throwaway detail. It is the atmosphere of the whole prayer.</p>
-            </div>
-
-            <div class="scripture-block">
-                <p>In his defense Jesus said to them, "My Father is always at his work to this very day, and I too am working." For this reason they tried all the more to kill him; not only was he breaking the Sabbath, but he was even calling God his own Father, making himself equal with God.</p>
-                <cite>John 5:17-18 NIV</cite>
-            </div>
-
-            <p>This was Jesus' emphasis in his earthly ministry. When the opportunity came to validate his ministry, Jesus revealed God to the religious leaders as Father. The reaction shows that this was not taken lightly. It was serious business to call God your Father.</p>
-
-            <h3>Jesus Teaches His Disciples to Pray to the Father</h3>
-            <div class="scripture-block">
-                <p>One day Jesus was praying in a certain place. When he finished, one of his disciples said to him, "Lord, teach us to pray, just as John taught his disciples." He said to them, "When you pray, say: Father, hallowed be your name, your kingdom come."</p>
-                <cite>Luke 11:1-2 NIV</cite>
-            </div>
-
-            <p>When Jesus taught his disciples how to approach God in prayer, he did not start with technique, eloquence, or a long list of rules. He started with relationship.</p>
-
-            <div class="quote-block">
-                <p>"So far from teaching the multitudes that God is Father of all, there is a general agreement from all sources that Jesus spoke of the subject only to his disciples."</p>
-                <cite>Bruce Metzger, The New Testament: Its Background, Growth, and Content</cite>
-            </div>
-
-            <h3>Jesus Reveals the Father</h3>
-            <p>The Old Testament already speaks of God as Father. In the Gospels, Jesus repeatedly uses that language as he prays and teaches his disciples how to pray.</p>
-
-            <div class="scripture-block">
-                <p>"All things have been committed to me by my Father. No one knows who the Son is except the Father, and no one knows who the Father is except the Son and those to whom the Son chooses to reveal him."</p>
-                <cite>Luke 10:22 NIV</cite>
-            </div>
-
-            <div class="scripture-block">
-                <p>"I have revealed you to those whom you gave me out of the world."</p>
-                <cite>John 17:6 NIV</cite>
-            </div>
-
-            <p>Jesus comes to God as Father and brings his disciples into the family circle. Fatherhood means closeness. It does not mean distance.</p>
-
-            <div class="sermon-point">
-                <div class="point-header">
-                    <div class="point-number">2</div>
-                    <h3 class="point-title">Praying to the Father is Special</h3>
-                </div>
-                <p>Jesus repeatedly addresses God as Father in prayer. John 17 gathers that pattern into one concentrated moment.</p>
-            </div>
-
-            <h3>The Cry from the Cross</h3>
-            <div class="scripture-block">
-                <p>And at three in the afternoon Jesus cried out in a loud voice, "Eloi, Eloi, lema sabachthani?" which means "My God, my God, why have you forsaken me?"</p>
-                <cite>Mark 15:34 NIV</cite>
-            </div>
-
-            <p>Jesus' cry in Mark 15:34 echoes Psalm 22:1. Luke 23:46 also records Jesus addressing God as Father from the cross. My reading is that Mark's cry expresses the anguish of separation. Mark records the cry itself without explaining it in those terms.</p>
-
-            <h3>Jesus Uses Abba in Gethsemane</h3>
-            <div class="scripture-block">
-                <p>Going a little farther, he fell to the ground and prayed that if possible the hour might pass from him. "Abba, Father," he said, "everything is possible for you. Take this cup from me. Yet not what I will, but what you will."</p>
-                <cite>Mark 14:35-36 NIV</cite>
-            </div>
-
-            <p><em>Abba</em> is Aramaic for Father. Mark preserves the Aramaic word in Jesus' prayer at one of the most vulnerable moments of his life.</p>
-
-            <h3>The Significance is Access</h3>
-            <p><em>Abba</em> means Father. The word itself does not require an exclusive family nickname or a translation like “Daddy.”</p>
-
-            <p>What moves me in Gethsemane is the relationship the prayer shows. In a moment of anguish, Jesus still comes to the Father with reverence and trust. The next two passages connect that kind of access with our adoption as God's children.</p>
-
-            <div class="scripture-block">
-                <p>The Spirit you received does not make you slaves, so that you live in fear again; rather, the Spirit you received brought about your adoption to sonship. And by him we cry, "Abba, Father."</p>
-                <cite>Romans 8:15 NIV</cite>
-            </div>
-
-            <div class="scripture-block">
-                <p>Because you are his sons, God sent the Spirit of his Son into our hearts, the Spirit who calls out, "Abba, Father."</p>
-                <cite>Galatians 4:6 NIV</cite>
-            </div>
-
-            <h2>What This Means for Us</h2>
-            <p>As Christians, we need to recognize this special connection with God as Father when we pray. We are in the inner circle as his children. When we read about God as Father in Scripture, it should matter to us as it did to Jesus and the disciples.</p>
-
-            <div class="scripture-block">
-                <p>"Which of you, if your son asks for bread, will give him a stone? Or if he asks for a fish, will give him a snake? If you, then, though you are evil, know how to give good gifts to your children, how much more will your Father in heaven give good gifts to those who ask him!"</p>
-                <cite>Matthew 7:9-11 NIV</cite>
-            </div>
-
-            <p>Jesus reveals God as the thoughtful Father who responds to his children. Even flawed earthly parents know how to give good gifts. How much more your Father in heaven?</p>
-
-            <div class="application-section">
-                <h3>Practicals</h3>
-                <ul>
-                    <li>Try praying to God with a reverent family term you have not used before, such as Abba, Father, Dad, or another address that helps you approach God with trust.</li>
-                    <li>Find a God-as-Father Scripture to anchor your prayer.</li>
-                    <li>Let John 17 shape the way you pray.</li>
-                </ul>
-            </div>
-
-            <h2>Conclusion</h2>
-            <p>Jesus came to reveal the Father and bring people into the family. I encourage you to study the Bible and find out what it means to be part of God's family, part of his inner circle, and one of his children.</p>
-
-            <div class="quote-block">
-                <p>Never take for granted the relationship with God as our Father. The way we view God matters, especially when we approach him. Seeing God as our Father deepens our connection to him.</p>
-            </div>
-
-            <p>John 17 shows us the heart of it: Jesus prays to the Father, reveals the Father, and brings his disciples into the Father's name, truth, mission, unity, love, and presence.</p>
-        </div>
-    </article>
-
+ </div>
+</article>
     <footer>
-        <div class="footer-links">
-            <a href="../index.html">Home</a>
-            <a href="../posts.html">Posts</a>
-            <a href="../about.html">About</a>
-            <a href="mailto:richard.buckner@gpcc.org">Contact</a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../posts.html">Posts</a>
+                <a href="../about.html">About</a>
+                <a href="mailto:richard.buckner@gpcc.org">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 RS Buckner. All rights reserved.</p>
         </div>
-        <p class="footer-copy">© 2026 Richard Buckner</p>
     </footer>
 
     <div class="article-actions" role="navigation" aria-label="Article actions">
-        <a href="../posts.html">Back to Posts</a>
-        <a href="#article-top">Back to Top</a>
+        <a href="../posts.html?category=bible-study">Back to Posts</a>
+        <a id="backToTop" href="#article-top">Back to Top</a>
     </div>
 
     <script>
-        const progressBar = document.getElementById('progressBar');
+        // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileNav = document.querySelector('.mobile-nav');
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            progressBar.style.width = `${(winScroll / height) * 100}%`;
-        });
+
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Reading progress bar
+        const progressBar = document.getElementById('progressBar');
+        const article = document.querySelector('.article-content');
+
+        window.addEventListener('scroll', () => {
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            const progress = Math.min(
+                Math.max((scrollY - articleTop + windowHeight * 0.5) / articleHeight * 100, 0),
+                100
+            );
+
+            progressBar.style.width = progress + '%';
         });
     </script>
 </body>

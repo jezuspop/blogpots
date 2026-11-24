@@ -1,0 +1,18 @@
+/* Bible Study pages use the established topical reading shell and shared article fade. */
+.hero-content .post-category.bible-study { background: #312c53; color: #e8ddff; }
+.bible-study-content a { color: #dbc1ff; text-decoration-thickness: .08em; text-underline-offset: .16em; }
+.bible-study-content .study-outline { display:block; border:1px solid var(--reading-border); border-radius:.9rem; padding:1rem 1.25rem; margin-block:1rem 2rem; background: var(--reading-panel); }
+.bible-study-content .study-outline summary { color:var(--reading-heading); cursor:pointer; font-weight:650; padding:.2rem 0; }
+.bible-study-content .study-outline ol { columns:2; gap:2rem; }
+.bible-study-content .study-outline li { break-inside: avoid; margin-block-end:.45rem; }
+.bible-study-content .study-table-scroll { overflow-x:auto; border:1px solid var(--reading-border); border-radius:.8rem; margin-block:1.3rem 1.8rem; max-width:100%; }
+.bible-study-content .study-table-scroll:focus-visible { outline:2px solid var(--reading-lavender); outline-offset:3px; }
+.bible-study-content table { width:100%; border-collapse:collapse; font-size:.92em; min-width:min(30rem,100%); }
+.bible-study-content :is(th,td) { padding:.75rem .85rem; text-align:left; vertical-align:top; border-block-end:1px solid var(--reading-border); min-width:7rem; }
+.bible-study-content th { color:var(--reading-heading); background:#251d31; }
+.bible-study-content tbody tr:nth-child(even) { background:var(--reading-panel); }
+.bible-study-content :is(.quote-block,.series-info,.study-panel) { margin-block:1.25rem; }
+.bible-study-content :is(.quote-block,.series-info,.study-panel) > :last-child { margin-bottom:0; }
+.bible-study-content :is(h2,h3,h4) { scroll-margin-block-start: 6.5rem; }
+.bible-study-content .sermon-point { margin-block: 2.4rem 1rem; }
+@media (max-width: 620px) { .bible-study-content .study-outline ol { columns:1; } .bible-study-content :is(th,td) { padding:.6rem .7rem; } }
